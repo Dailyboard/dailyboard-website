@@ -5,7 +5,11 @@
 				<div class="flex lg:flex-1">
 					<a href="#" class="-m-1.5 p-1.5 flex items-center">
 						<span class="sr-only">Dailyboard</span>
-						<img class="h-8 w-auto" src="/dailyboard_logomark.svg" alt="" />
+						<img
+							class="h-10 w-auto"
+							src="https://res.cloudinary.com/dl5xtsolh/image/upload/v1679063843/Logo-light-ring-v3_xstzgy.svg"
+							alt=""
+						/>
 						<h1 class="ml-4 text-3xl text-white font-extrabold">Dailyboard</h1>
 					</a>
 				</div>
@@ -118,7 +122,7 @@
 						<div class="mt-10 flex items-center justify-center gap-x-6">
 							<a
 								href="#"
-								class="rounded-md bg-emerald-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+								class="rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
 								>Get started</a
 							>
 							<a href="#" class="text-sm font-semibold leading-6 text-white"
