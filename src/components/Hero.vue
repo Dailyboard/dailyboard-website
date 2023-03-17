@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<header class="absolute inset-x-0 top-0 z-50">
+		<header class="fixed inset-x-0 top-0 z-50 backdrop-blur border-b border-gray-900">
 			<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 				<div class="flex lg:flex-1">
 					<a href="#" class="-m-1.5 p-1.5 flex items-center">
@@ -88,7 +88,7 @@
 		<div class="relative isolate pt-14">
 			<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
 				<svg
-					class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+					class="relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
 					viewBox="0 0 1155 678"
 				>
 					<path
@@ -116,8 +116,8 @@
 					<div class="mx-auto max-w-2xl text-center">
 						<h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Plan, commit, succeed</h1>
 						<p class="mt-6 text-lg leading-8 text-gray-300">
-							Dailyboard is the missing piece of your project management app. Make your commitments
-							transparent and work together as a well-oiled team.
+							Dailyboard is the missing piece of your project management tools. Make your commitments
+							transparent and move together like a true team.
 						</p>
 						<div class="mt-10 flex items-center justify-center gap-x-6">
 							<a
