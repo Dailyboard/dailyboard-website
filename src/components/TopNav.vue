@@ -3,7 +3,7 @@
 		<div class="flex lg:flex-1">
 			<a href="#" class="-m-1.5 p-1.5 flex items-center">
 				<span class="sr-only">Dailyboard</span>
-				<img class="h-6 w-auto sm:h-8 lg:h-10" :src="logoUrl" alt="" />
+				<img class="h-6 sm:h-8 lg:h-10 w-auto" :src="logoUrl" alt="" />
 				<h1 class="ml-4 text-xl font-extrabold sm:text-2xl lg:text-3xl">Dailyboard</h1>
 			</a>
 		</div>
@@ -38,11 +38,12 @@
 			class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
 		>
 			<div class="flex items-center justify-between">
-				<a href="#" class="-m-1.5 p-1.5 flex items-center">
+				<a href="#" class="-m-1.5 p-1.5 flex items-center sm:hidden">
 					<span class="sr-only">Dailyboard</span>
-					<img class="h-8 w-auto" :src="logoUrl" alt="" />
-					<h1 class="ml-2 text-xl font-extrabold">Dailyboard</h1>
+					<img class="h-6 sm:h-8 lg:h-10 w-auto" :src="logoUrl" alt="" />
+					<h1 class="ml-4 text-xl font-extrabold">Dailyboard</h1>
 				</a>
+				<span class="hidden sm:block text-xl font-extrabold">Menu</span>
 				<button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400" @click="mobileMenuOpen = false">
 					<span class="sr-only">Close menu</span>
 					<XMarkIcon class="h-6 w-6" aria-hidden="true" />
