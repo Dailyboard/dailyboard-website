@@ -5,7 +5,7 @@
 				<div class="flex lg:flex-1">
 					<a href="#" class="-m-1.5 p-1.5 flex items-center">
 						<span class="sr-only">Dailyboard</span>
-						<img class="h-8 w-auto" src="public/dailyboard_logomark.svg" alt="" />
+						<img class="h-8 w-auto" src="/dailyboard_logomark.svg" alt="" />
 						<h1 class="ml-4 text-3xl text-white font-extrabold">Dailyboard</h1>
 					</a>
 				</div>
