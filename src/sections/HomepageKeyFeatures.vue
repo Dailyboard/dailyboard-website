@@ -37,7 +37,7 @@
 							Dailyboard provides a unique way to plan, monitor and synchronize your team's
 							<strong>commitments</strong>.
 						</p>
-						<dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-text-weak lg:max-w-none">
+						<dl class="mt-10 max-w-xl space-y-8 text-base leading-7 lg:max-w-none">
 							<div v-for="feature in features" :key="feature.name" class="relative pl-9">
 								<dt class="inline font-semibold">
 									<component
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 				<img
-					src="https://res.cloudinary.com/dl5xtsolh/image/upload/v1679002007/dailyboard_hero_screenshot_hyhvfa.webp"
+					src="https://res.cloudinary.com/dl5xtsolh/image/upload/v1679085585/dailyboard_homepage_hero_app_screenshot.png"
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
 					width="2432"
