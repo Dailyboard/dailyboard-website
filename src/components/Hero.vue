@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-gray-900">
+	<div>
 		<header class="absolute inset-x-0 top-0 z-50">
 			<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 				<div class="flex lg:flex-1">
@@ -113,7 +113,7 @@
 						<h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Plan, commit, succeed</h1>
 						<p class="mt-6 text-lg leading-8 text-gray-300">
 							Dailyboard is the missing piece of your project management app. Make your commitments
-							transparent and finally feel like well-oiled team.
+							transparent and work together as a well-oiled team.
 						</p>
 						<div class="mt-10 flex items-center justify-center gap-x-6">
 							<a
