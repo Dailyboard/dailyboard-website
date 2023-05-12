@@ -62,7 +62,7 @@
 					</div>
 					<div class="py-6">
 						<a
-							href="https://app.dailyboard.io/auth/login"
+							href="#"
 							class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 hover:bg-gray-800"
 							>Log in</a
 						>
