@@ -87,5 +87,5 @@
 
 	const mobileMenuOpen = ref(false);
 
-	const logoUrl = ref('https://res.cloudinary.com/dl5xtsolh/image/upload/v1679063843/Logo-light-ring-v3_xstzgy.svg');
+	const logoUrl = ref('https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard-logo.svg');
 </script>
