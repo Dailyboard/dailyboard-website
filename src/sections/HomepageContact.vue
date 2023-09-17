@@ -2,6 +2,7 @@
 	<div class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
 		<div
 			class="relative isolate overflow-hidden bg-gray-800/20 px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32"
+			data-animate="animate-fade-left"
 		>
 			<h2
 				class="mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-text sm:text-4xl"

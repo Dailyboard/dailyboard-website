@@ -1,6 +1,6 @@
 <template>
 	<div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-32 lg:px-8">
-		<div class="mx-auto max-w-2xl lg:text-center">
+		<div class="mx-auto max-w-2xl lg:text-center" data-animate="animate-fade-left">
 			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
 				Transform teamwork
 			</h2>
@@ -12,7 +12,10 @@
 				Dailyboard is here to help you solve them once and for all!
 			</p>
 		</div>
-		<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+		<div
+			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+			data-animate="animate-fade-right"
+		>
 			<dl
 				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
 			>

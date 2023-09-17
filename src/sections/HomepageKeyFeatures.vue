@@ -1,5 +1,5 @@
 <template>
-	<div class="overflow-hidden py-24 sm:py-32 relative isolate">
+	<div class="overflow-hidden py-24 sm:py-32 relative isolate" ref="target">
 		<div
 			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 		>
@@ -31,7 +31,7 @@
 			<div
 				class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
 			>
-				<div class="lg:pr-8 lg:pt-4">
+				<div class="lg:pr-8 lg:pt-4" data-animate="animate-fade-left">
 					<div class="lg:max-w-lg">
 						<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
 							Commit to succeed
@@ -68,6 +68,7 @@
 					src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png"
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+					data-animate="animate-fade-right"
 					width="2432"
 					height="1442"
 				/>
