@@ -21,6 +21,30 @@ const { title } = Astro.props;
 	<body class="bg-background text-text">
 		<slot />
 		<Footer />
+		<script>
+			const observer = new IntersectionObserver(
+				(elements) => {
+					elements.forEach((el) => {
+						const animation = el.target.getAttribute('data-animate');
+						const delayData = el.target.getAttribute('data-delay');
+						const delay = delayData ? Number.parseInt(delayData) : 0;
+
+						if (animation && el.isIntersecting) {
+							setTimeout(() => {
+								el.target.classList.add(animation);
+								el.target.classList.remove('opacity-0');
+							}, delay);
+						}
+					});
+				},
+				{ threshold: 0.35 }
+			);
+			const elements = document.querySelectorAll('[data-animate]');
+			elements.forEach((el) => {
+				el.classList.add('opacity-0');
+				observer.observe(el);
+			});
+		</script>
 	</body>
 </html>
 <style is:global></style>

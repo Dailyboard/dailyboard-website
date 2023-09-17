@@ -31,15 +31,24 @@
 			<div
 				class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
 			>
-				<div class="lg:pr-8 lg:pt-4" data-animate="animate-fade-left">
+				<div class="lg:pr-8 lg:pt-4">
 					<div class="lg:max-w-lg">
-						<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
+						<h2
+							class="text-base font-semibold leading-7 text-text-primary-weak"
+							data-animate="animate-fade-left"
+						>
 							Commit to succeed
 						</h2>
-						<p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+						<p
+							class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
+							data-animate="animate-fade-left"
+						>
 							Rediscover teamwork
 						</p>
-						<p class="mt-6 text-lg leading-8 text-text-weak">
+						<p
+							class="mt-6 text-lg leading-8 text-text-weak"
+							data-animate="animate-fade-left"
+						>
 							Dailyboard provides a unique way to plan, monitor and synchronize
 							your team's
 							<strong>commitments</strong>.
@@ -49,6 +58,8 @@
 								v-for="feature in features"
 								:key="feature.name"
 								class="relative pl-9"
+								data-animate="animate-fade-left"
+								:data-delay="feature.delay"
 							>
 								<dt class="inline font-semibold">
 									<component
@@ -69,7 +80,7 @@
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
 					data-animate="animate-fade-right"
-					data-delay="300"
+					data-delay="600"
 					width="2432"
 					height="1442"
 				/>
@@ -87,18 +98,21 @@
 			description:
 				'Your tasks only tell you where things <strong><u>are</u></strong>. Commitments tell everyone, where you want them <strong><u>to be</u></strong>.',
 			icon: RocketLaunchIcon,
+			delay: 200,
 		},
 		{
 			name: 'Plan together.',
 			description:
 				"See your teammates' commitments from all contexts and spot roadblocks ahead of time.",
 			icon: SquaresPlusIcon,
+			delay: 300,
 		},
 		{
 			name: 'Collect data and improve.',
 			description:
 				'Use commitments history and analytics to improve and elevate your performance.',
 			icon: SparklesIcon,
+			delay: 400,
 		},
 	];
 </script>
