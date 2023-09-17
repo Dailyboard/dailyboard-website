@@ -27,12 +27,7 @@
 			>
 		</div>
 		<div class="flex flex-1 justify-end">
-			<a
-				href="#"
-				class="rounded-md bg-background-primary px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-background-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-			>
-				Join beta
-			</a>
+			<TryCta />
 		</div>
 	</nav>
 	<Dialog as="div" class="hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -68,12 +63,7 @@
 						>
 					</div>
 					<div class="py-6">
-						<a
-							href="#"
-							class="rounded-md bg-background-primary px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-background-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-						>
-							Join beta
-						</a>
+						<TryCta />
 					</div>
 				</div>
 			</div>
@@ -85,6 +75,7 @@
 	import { ref } from 'vue';
 	import { Dialog, DialogPanel } from '@headlessui/vue';
 	import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
+	import TryCta from './TryCta.vue';
 
 	const navigation: { name: string; href: string }[] = [];
 

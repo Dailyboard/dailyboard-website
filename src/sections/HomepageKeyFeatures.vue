@@ -69,6 +69,7 @@
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
 					data-animate="animate-fade-right"
+					data-delay="300"
 					width="2432"
 					height="1442"
 				/>

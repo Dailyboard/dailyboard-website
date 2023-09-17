@@ -4,7 +4,7 @@ import HomepageHero from '../sections/HomepageHero.astro';
 import HomepageKeyFeatures from '../sections/HomepageKeyFeatures.vue';
 import HomepageLogocloud from '../sections/HomepageLogocloud.astro';
 import HomepageSolvedProblems from '../sections/HomepageSolvedProblems.vue';
-import HomepageContact from '../sections/HomepageContact.vue';
+import HomepageContact from '../sections/HomepageContact.astro';
 ---
 
 <Layout title="Dailyboard - Transparent planning for all teams">
@@ -22,9 +22,14 @@ import HomepageContact from '../sections/HomepageContact.vue';
 		(elements) => {
 			elements.forEach((el) => {
 				const animation = el.target.getAttribute('data-animate');
+				const delayData = el.target.getAttribute('data-delay');
+				const delay = delayData ? Number.parseInt(delayData) : 0;
+
 				if (animation && el.isIntersecting) {
-					el.target.classList.remove('opacity-0');
-					el.target.classList.add(animation);
+					setTimeout(() => {
+						el.target.classList.add(animation);
+						el.target.classList.remove('opacity-0');
+					}, delay);
 				}
 			});
 		},

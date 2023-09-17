@@ -15,6 +15,7 @@
 		<div
 			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
 			data-animate="animate-fade-right"
+			data-delay="300"
 		>
 			<dl
 				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
@@ -25,7 +26,7 @@
 					class="flex flex-col"
 				>
 					<dt
-						class="flex items-center gap-x-3 text-base font-semibold leading-7 text-text"
+						class="flex items-center gap-x-3 text-base font-extrabold leading-7 text-text"
 					>
 						<component
 							:is="feature.icon"
@@ -46,26 +47,30 @@
 </template>
 
 <script setup>
-	import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid';
+	import {
+		ChevronDoubleUpIcon,
+		ClockIcon,
+		QuestionMarkCircleIcon,
+	} from '@heroicons/vue/20/solid';
 
 	const secondaryFeatures = [
 		{
 			name: 'Never ask "What did we want to do?" again',
 			description:
-				'Have your commitments from previous day always ready for the daily planning.',
-			icon: LockClosedIcon,
+				'Have your commitments from the previous day always ready for the daily planning.',
+			icon: QuestionMarkCircleIcon,
 		},
 		{
 			name: 'Work in perfect sync',
 			description:
 				"Plan your day as a team and don't waste time waiting for others when you need them.",
-			icon: CloudArrowUpIcon,
+			icon: ClockIcon,
 		},
 		{
 			name: 'Bring hidden work to the surface',
 			description:
 				"Every team is part of a larger organisation. Clearly see your team's commitments outside your team.",
-			icon: ArrowPathIcon,
+			icon: ChevronDoubleUpIcon,
 		},
 	];
 </script>

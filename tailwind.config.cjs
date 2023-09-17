@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -48,5 +49,20 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ matchUtilities, theme }) => {
+			matchUtilities(
+				{
+					'animation-delay': (value) => {
+						return {
+							'animation-delay': value,
+						};
+					},
+				},
+				{
+					values: theme('transitionDelay'),
+				}
+			);
+		}),
+	],
 };
