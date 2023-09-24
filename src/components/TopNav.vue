@@ -27,7 +27,7 @@
 			>
 		</div>
 		<div class="flex flex-1 justify-end">
-			<TryCta />
+			<TryCtaScroll client:only />
 		</div>
 	</nav>
 	<Dialog as="div" class="hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -63,7 +63,7 @@
 						>
 					</div>
 					<div class="py-6">
-						<TryCta />
+						<TryCtaScroll client:only />
 					</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 	import { ref } from 'vue';
 	import { Dialog, DialogPanel } from '@headlessui/vue';
 	import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
-	import TryCta from './TryCta.vue';
+	import TryCtaScroll from './TryCtaScroll.vue';
 
 	const navigation: { name: string; href: string }[] = [];
 

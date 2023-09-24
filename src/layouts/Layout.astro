@@ -21,7 +21,20 @@ const { title } = Astro.props;
 	<body class="bg-background text-text">
 		<slot />
 		<Footer />
+
 		<script>
+			import MoveTo from 'moveTo';
+
+			const moveTo = new MoveTo();
+			const triggers = document.querySelectorAll('[data-scroll]');
+			const contactElement = document.getElementById('contact');
+
+			if (contactElement) {
+				for (const trigger of triggers) {
+					moveTo.registerTrigger(trigger);
+				}
+			}
+
 			const observer = new IntersectionObserver(
 				(elements) => {
 					elements.forEach((el) => {

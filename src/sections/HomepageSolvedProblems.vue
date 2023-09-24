@@ -14,7 +14,7 @@
 		</div>
 		<div
 			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
-			data-animate="animate-fade-right"
+			data-animate="animate-fade-left"
 			data-delay="300"
 		>
 			<dl

@@ -79,7 +79,7 @@
 					src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png"
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-					data-animate="animate-fade-right"
+					data-animate="animate-fade-left"
 					data-delay="600"
 					width="2432"
 					height="1442"
