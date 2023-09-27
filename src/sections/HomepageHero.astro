@@ -1,22 +1,11 @@
 ---
-import TopNav from '../components/TopNav.vue';
+import TopNav from '../components/TopNav.astro';
 import TryCtaScroll from '../components/TryCtaScroll.vue';
-
-// const observer = new IntersectionObserver((elements) => {
-// 	elements.forEach((el) => {
-// 		el.isIntersecting
-// 			? el.target.classList.add('show')
-// 			: el.target.classList.remove('show');
-// 	});
-// });
-
-// const animatedElements = document.querySelectorAll('.animate');
-// animatedElements.forEach((el) => observer.observe(el));
 ---
 
 <div>
 	<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md border-b border-gray-900">
-		<TopNav client:load />
+		<TopNav />
 	</header>
 
 	<div class="relative isolate pt-14">

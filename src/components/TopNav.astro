@@ -1,0 +1,20 @@
+---
+import TryCtaScroll from './TryCtaScroll.vue';
+---
+
+<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+	<div class="flex lg:flex-1">
+		<a href="#" class="-m-1.5 p-1.5 flex items-center">
+			<span class="sr-only">Dailyboard</span>
+			<img
+				class="h-6 sm:h-8 lg:h-10 w-auto"
+				src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard-logo.svg"
+				alt="Dailyboard logo"
+			/>
+			<h1 class="ml-4 text-xl font-extrabold sm:text-2xl lg:text-3xl">Dailyboard</h1>
+		</a>
+	</div>
+	<div class="flex flex-1 justify-end">
+		<TryCtaScroll client:load />
+	</div>
+</nav>
