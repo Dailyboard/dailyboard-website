@@ -40,26 +40,29 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-3xl text-center" data-animate="animate-fade-left">
 					<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-						Your team, finally in sync
+						Every success is made of daily wins
 					</h1>
 					<p class="mt-6 text-lg leading-8 text-text-weak">
 						Do you feel like your team could be more effective, if only you were
-						more in sync? <strong class="font-extrabold">Dailyboard</strong> is
-						here to help your team plan your day and reach your full potential!
+						more in sync? <strong class="font-extrabold">Dailyboard</strong> will
+						help your team plan your day and reach your full potential!
 					</p>
 					<div class="mt-10 flex items-center justify-center gap-x-6">
 						<TryCtaScroll />
 					</div>
 				</div>
-				<img
-					src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png"
-					alt="App screenshot"
-					width="2432"
-					height="1442"
-					class="mt-16 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24"
-					data-animate="animate-fade-left"
-					data-delay="300"
-				/>
+				<div class="shadow-inner">
+					<video
+						autoplay
+						loop
+						class="aspect-video w-full animate-fade-left duration-300 mt-12"
+					>
+						<source
+							type="video/mp4"
+							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696697282/Dailyboard.io_-_Teaser_dyv6bt.mp4"
+						/>
+					</video>
+				</div>
 			</div>
 		</div>
 		<div
@@ -91,5 +94,3 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 		</div>
 	</div>
 </div>
-
-<style></style>

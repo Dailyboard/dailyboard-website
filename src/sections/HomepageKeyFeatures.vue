@@ -76,7 +76,7 @@
 					</div>
 				</div>
 				<img
-					src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png"
+					src="https://res.cloudinary.com/dl5xtsolh/image/upload/v1696697789/dailyboard_app_screenshot_board.png"
 					alt="Product screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
 					data-animate="animate-fade-left"
