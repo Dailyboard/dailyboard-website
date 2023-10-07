@@ -77,8 +77,10 @@
 				</div>
 				<img
 					src="https://res.cloudinary.com/dl5xtsolh/image/upload/v1696697789/dailyboard_app_screenshot_board.png"
-					alt="Product screenshot"
+					alt="Dailyboard - Board screenshot"
 					class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+					loading="lazy"
+					decoding="async"
 					data-animate="animate-fade-left"
 					data-delay="600"
 					width="2432"

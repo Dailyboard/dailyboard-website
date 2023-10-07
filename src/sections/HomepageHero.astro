@@ -43,9 +43,10 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 						Every success is made of daily wins
 					</h1>
 					<p class="mt-6 text-lg leading-8 text-text-weak">
-						Do you feel like your team could be more effective, if only you were
-						more in sync? <strong class="font-extrabold">Dailyboard</strong> will
-						help your team plan your day and reach your full potential!
+						Do you feel like your team could deliver more value, if only your days
+						were planned better? <strong class="font-extrabold">Dailyboard</strong>
+						will help your team with daily planning, so you can reach your full
+						potential!
 					</p>
 					<div class="mt-10 flex items-center justify-center gap-x-6">
 						<TryCtaScroll />
@@ -53,14 +54,25 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 				</div>
 				<div class="shadow-inner">
 					<video
+						preload="auto"
 						autoplay
 						loop
-						controls
-						class="aspect-video w-full animate-fade-left duration-300 mt-12"
+						class="hidden lg:block aspect-video w-full animate-fade-left duration-300 mt-12 shadow-xl shadow-gray-900"
 					>
 						<source
 							type="video/mp4"
-							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696697282/Dailyboard.io_-_Teaser_dyv6bt.mp4"
+							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696706246/Dailyboard_Intro_1080.mp4"
+						/>
+					</video>
+					<video
+						preload="auto"
+						autoplay
+						loop
+						class="lg:hidden aspect-video w-full animate-fade-left duration-300 mt-12 shadow-xl shadow-gray-900"
+					>
+						<source
+							type="video/mp4"
+							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696706246/Dailyboard_Intro_720.mp4"
 						/>
 					</video>
 				</div>

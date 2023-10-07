@@ -4,7 +4,7 @@
 		class="rounded-md bg-background-primary px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-background-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
 		target="_blank"
 	>
-		Join beta
+		Get early access
 	</a>
 </template>
 <script setup>
