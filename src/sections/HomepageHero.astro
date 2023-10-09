@@ -70,10 +70,11 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 					<video
 						id="hero_video__mobile"
 						preload="auto"
-						controls
 						autoplay
 						loop
 						muted
+						playsinline
+						controls
 						class="lg:hidden aspect-video w-full animate-fade-left duration-300 mt-12 shadow-xl shadow-gray-900"
 					>
 						<source
@@ -81,6 +82,7 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696706246/Dailyboard_Intro_720.mp4"
 						/>
 					</video>
+					<div id="info"></div>
 				</div>
 			</div>
 		</div>
@@ -113,11 +115,3 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 		</div>
 	</div>
 </div>
-
-<script>
-	const heroVideoMobile = document.getElementById('hero_video__mobile') as HTMLVideoElement;
-
-	if (heroVideoMobile) {
-		heroVideoMobile.play();
-	}
-</script>
