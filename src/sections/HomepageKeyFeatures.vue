@@ -92,7 +92,11 @@
 </template>
 
 <script setup lang="ts">
-	import { RocketLaunchIcon, SquaresPlusIcon, SparklesIcon } from '@heroicons/vue/20/solid';
+	import {
+		RocketLaunchIcon,
+		SquaresPlusIcon,
+		UserCircleIcon,
+	} from '@heroicons/vue/20/solid';
 
 	const features = [
 		{
@@ -103,18 +107,25 @@
 			delay: 200,
 		},
 		{
+			name: 'Who, what, when.',
+			description:
+				'Never wonder if anyone will work on that important thing again. Get your answers without wasting time on status updates',
+			icon: UserCircleIcon,
+			delay: 200,
+		},
+		{
 			name: 'Plan together.',
 			description:
-				"See your teammates' commitments from all contexts and spot roadblocks ahead of time.",
+				'Quickly scan commitments of your teammates and spot roadblocks ahead of time.',
 			icon: SquaresPlusIcon,
 			delay: 300,
 		},
-		{
-			name: 'Collect data and improve.',
-			description:
-				'Use commitments history and analytics to improve and elevate your performance.',
-			icon: SparklesIcon,
-			delay: 400,
-		},
+		// {
+		// 	name: 'Collect data and improve.',
+		// 	description:
+		// 		'Use commitments history and analytics to improve and elevate your performance.',
+		// 	icon: SparklesIcon,
+		// 	delay: 400,
+		// },
 	];
 </script>
