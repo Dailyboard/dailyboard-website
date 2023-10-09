@@ -12,11 +12,7 @@
 				Dailyboard is here to help you solve them once and for all!
 			</p>
 		</div>
-		<div
-			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
-			data-animate="animate-fade-left"
-			data-delay="300"
-		>
+		<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
 			<dl
 				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
 			>
@@ -24,6 +20,8 @@
 					v-for="feature in primaryFeatures"
 					:key="feature.name"
 					class="flex flex-col"
+					data-animate="animate-fade-left"
+					data-delay="300"
 				>
 					<dt
 						class="flex items-center gap-x-3 text-base font-extrabold leading-7 text-text"
@@ -43,11 +41,7 @@
 				</div>
 			</dl>
 		</div>
-		<div
-			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
-			data-animate="animate-fade-left"
-			data-delay="300"
-		>
+		<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
 			<dl
 				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
 			>
@@ -55,6 +49,8 @@
 					v-for="feature in secondaryFeatures"
 					:key="feature.name"
 					class="flex flex-col"
+					data-animate="animate-fade-left"
+					data-delay="300"
 				>
 					<dt
 						class="flex items-center gap-x-3 text-base font-extrabold leading-7 text-text"
