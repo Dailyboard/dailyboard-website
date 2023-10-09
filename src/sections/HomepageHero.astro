@@ -54,6 +54,7 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 				</div>
 				<div class="shadow-inner">
 					<video
+						id="hero_video__desktop"
 						preload="auto"
 						autoplay
 						loop
@@ -66,6 +67,7 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 						/>
 					</video>
 					<video
+						id="hero_video__mobile"
 						preload="auto"
 						autoplay
 						loop
@@ -109,3 +111,11 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 		</div>
 	</div>
 </div>
+
+<script>
+	const heroVideoMobile = document.getElementById('hero_video__mobile') as HTMLVideoElement;
+
+	if (heroVideoMobile) {
+		heroVideoMobile.play();
+	}
+</script>
