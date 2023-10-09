@@ -21,6 +21,37 @@
 				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
 			>
 				<div
+					v-for="feature in primaryFeatures"
+					:key="feature.name"
+					class="flex flex-col"
+				>
+					<dt
+						class="flex items-center gap-x-3 text-base font-extrabold leading-7 text-text"
+					>
+						<component
+							:is="feature.icon"
+							class="h-5 w-5 flex-none text-text-primary-weak"
+							aria-hidden="true"
+						/>
+						{{ feature.name }}
+					</dt>
+					<dd
+						class="mt-4 flex flex-auto flex-col text-base leading-7 text-text-weak"
+					>
+						<p class="flex-auto">{{ feature.description }}</p>
+					</dd>
+				</div>
+			</dl>
+		</div>
+		<div
+			class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+			data-animate="animate-fade-left"
+			data-delay="300"
+		>
+			<dl
+				class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+			>
+				<div
 					v-for="feature in secondaryFeatures"
 					:key="feature.name"
 					class="flex flex-col"
@@ -48,29 +79,53 @@
 
 <script setup>
 	import {
+		ArrowTrendingUpIcon,
+		BoltIcon,
+		CakeIcon,
 		ChevronDoubleUpIcon,
 		ClockIcon,
+		HeartIcon,
 		QuestionMarkCircleIcon,
+		SunIcon,
 	} from '@heroicons/vue/20/solid';
 
-	const secondaryFeatures = [
+	const primaryFeatures = [
 		{
-			name: 'Never ask "What did we want to do?" again',
+			name: 'Achieve sustainable productivity',
 			description:
-				'Have your commitments from the previous day always ready for the daily planning.',
-			icon: QuestionMarkCircleIcon,
+				'Maximise your outcomes by reducing waste, not compromising a healthy work culture.',
+			icon: ChevronDoubleUpIcon,
+		},
+		{
+			name: 'Raise above willpower',
+			description:
+				'Boost your motivation with the power of a public commitment and peer accoutability.',
+			icon: ArrowTrendingUpIcon,
 		},
 		{
 			name: 'Work in perfect sync',
 			description:
-				"Plan your day as a team and don't waste time waiting for others when you need them.",
+				"Spot scheduling conflicts and don't waste time waiting for others when you need them.",
 			icon: ClockIcon,
+		},
+	];
+
+	const secondaryFeatures = [
+		{
+			name: 'Keep your promises',
+			description: 'Forget about the question "What did we want to do yesterday?"',
+			icon: QuestionMarkCircleIcon,
+		},
+		{
+			name: 'Awake the team spirit',
+			description: 'Commit and succeed together. Celebrate your daily wins as a team.',
+			icon: BoltIcon,
 		},
 		{
 			name: 'Bring hidden work to the surface',
 			description:
 				"Every team is part of a larger organisation. Clearly see your team's commitments outside your team.",
-			icon: ChevronDoubleUpIcon,
+			icon: SunIcon,
 		},
 	];
 </script>
