@@ -113,7 +113,7 @@
 			icon: QuestionMarkCircleIcon,
 		},
 		{
-			name: 'Awake the team spirit',
+			name: 'Awaken the team spirit',
 			description: 'Commit and succeed together. Celebrate your daily wins as a team.',
 			icon: BoltIcon,
 		},
