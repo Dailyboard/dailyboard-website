@@ -35,7 +35,11 @@
 		<div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
 			<h2 class="text-base font-semibold leading-7 text-text-primary">Pricing</h2>
 			<p class="mt-2 text-2xl font-bold tracking-tight text-text sm:text-4xl">
-				Buy your team's time for a fraction of its cost
+				Get results or your money back
+			</p>
+			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
+				Dailyboard can easily save everyone on your team an hour a month. It didn't?
+				Get a refund with no strings attached within the first 30 days.
 			</p>
 		</div>
 		<div
