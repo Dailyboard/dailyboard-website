@@ -1,5 +1,6 @@
 <template>
 	<div
+		id="pricing"
 		class="relative isolate bg-background px-6 pt-32 sm:pt-56 lg:px-8"
 		data-animate="animate-fade-left"
 	>

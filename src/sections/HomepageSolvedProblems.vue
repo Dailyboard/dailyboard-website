@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-auto mt-24 max-w-7xl px-6 sm:mt-32 lg:px-8">
+	<div id="solutions" class="mx-auto pt-24 max-w-7xl px-6 sm:pt-32 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:text-center" data-animate="animate-fade-left">
 			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
 				Transform teamwork

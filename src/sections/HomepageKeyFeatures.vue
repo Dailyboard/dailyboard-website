@@ -1,5 +1,9 @@
 <template>
-	<div class="overflow-hidden py-24 sm:py-32 relative isolate" ref="target">
+	<div
+		id="how-it-works"
+		class="overflow-hidden py-24 sm:py-32 relative isolate"
+		ref="target"
+	>
 		<div
 			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 		>
