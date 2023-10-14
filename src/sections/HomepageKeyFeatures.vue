@@ -100,16 +100,16 @@
 
 	const features = [
 		{
-			name: 'Focus on the future.',
+			name: 'Visualize the future.',
 			description:
-				'Your tasks only tell you where things <strong><u>are</u></strong>. Commitments tell everyone, where you want them <strong><u>to be</u></strong>.',
+				'Your tasks reflect where things <strong><u>are</u></strong>. Commitments reflect where you want them <strong><u>to be</u></strong>.',
 			icon: RocketLaunchIcon,
 			delay: 200,
 		},
 		{
 			name: 'Who, what, when.',
 			description:
-				'Never wonder if anyone will work on that important thing again. Get your answers without wasting time on status updates',
+				'Stop wondering if anyone will work on that important thing todaya. Get your answers without wasting time on status updates',
 			icon: UserCircleIcon,
 			delay: 200,
 		},
