@@ -38,8 +38,9 @@
 				Get results or your money back
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
-				Dailyboard can easily save everyone on your team an hour a month. It didn't?
-				Get a refund with no strings attached within the first 30 days.
+				With Dailyboard you buy your&nbsp;team's&nbsp;time for&nbsp;a&nbsp;fraction
+				of&nbsp;its&nbsp;cost. Not&nbsp;satisfied? Get&nbsp;a&nbsp;refund with no
+				strings attached within the first 60 days.
 			</p>
 		</div>
 		<div
