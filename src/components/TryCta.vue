@@ -11,7 +11,7 @@
 	import { ref } from 'vue';
 
 	const config = {
-		email: 'beta@dailyboard.io',
+		email: 'pioneers@dailyboard.io',
 		subject: `I want to join!`,
 		body: `Tell us a bit about your company and/or team!`,
 	};
