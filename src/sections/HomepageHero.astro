@@ -53,35 +53,15 @@ import TryCtaScroll from '../components/TryCtaScroll.vue';
 						<TryCtaScroll />
 					</div>
 				</div>
-				<div class="shadow-inner">
-					<video
-						id="hero_video__desktop"
-						preload="auto"
-						autoplay
-						loop
-						muted
-						class="hidden lg:block aspect-video w-full animate-fade-left duration-300 mt-20 lg:mt-24 xl:mt-32 shadow-xl shadow-gray-900"
-					>
-						<source
-							type="video/mp4"
-							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696706246/Dailyboard_Intro_1080.mp4"
-						/>
-					</video>
-					<video
-						id="hero_video__mobile"
-						preload="auto"
-						autoplay
-						loop
-						muted
-						playsinline
-						controls
-						class="lg:hidden aspect-video w-full animate-fade-left duration-300 mt-12 shadow-xl shadow-gray-900"
-					>
-						<source
-							type="video/mp4"
-							src="https://res.cloudinary.com/dl5xtsolh/video/upload/v1696706246/Dailyboard_Intro_720.mp4"
-						/>
-					</video>
+				<div data-animate="animate-fade-left">
+					<iframe
+						width="100%"
+						src="https://www.youtube.com/embed/B04Qybyzk3o?si=LPSh_UBjx-2Kx0Uh&controls=0"
+						title="Meet Dailyboard.io - A better way to plan your day as a team"
+						class="aspect-video mt-32 rounded-md"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen></iframe>
 					<div id="info"></div>
 				</div>
 			</div>
