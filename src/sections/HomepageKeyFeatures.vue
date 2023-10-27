@@ -113,7 +113,7 @@
 		{
 			name: 'Who, what, when.',
 			description:
-				'Stop wondering if anyone will work on that important thing todaya. Get your answers without wasting time on status updates',
+				'Stop wondering if anyone will work on that important thing today. Get your answers without wasting time on status updates',
 			icon: UserCircleIcon,
 			delay: 200,
 		},
