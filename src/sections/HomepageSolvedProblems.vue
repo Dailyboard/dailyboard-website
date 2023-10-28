@@ -108,7 +108,7 @@
 
 	const secondaryFeatures = [
 		{
-			name: 'Keep your promises',
+			name: 'Make promises responsibly',
 			description: 'Forget about the question "What did we want to do yesterday?"',
 			icon: QuestionMarkCircleIcon,
 		},

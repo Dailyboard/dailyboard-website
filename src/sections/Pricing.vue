@@ -39,8 +39,8 @@
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
 				With Dailyboard you buy your&nbsp;team's&nbsp;time for&nbsp;a&nbsp;fraction
-				of&nbsp;its&nbsp;cost. Not&nbsp;satisfied? Get&nbsp;a&nbsp;refund with no
-				strings attached within the first 60 days.
+				of&nbsp;its&nbsp;cost. If&nbsp;you&nbsp;don't&nbsp;see results in 60 days, get
+				an unconditional refund.
 			</p>
 		</div>
 		<div

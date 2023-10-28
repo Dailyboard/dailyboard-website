@@ -2,7 +2,7 @@
 	<div id="how-it-works" class="overflow-hidden relative isolate" ref="target">
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div
-				class="mx-auto max-w-2xl pb-24 sm:pb-32 lg:text-center"
+				class="mx-auto max-w-2xl py-24 sm:py-32 lg:text-center"
 				data-animate="animate-fade-left"
 			>
 				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
@@ -107,7 +107,7 @@
 				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470048/KeyFeatures__Sync_bgyeh7.png',
 		},
 		{
-			name: 'Map your path to success',
+			name: 'Pave your way to success',
 			description: `<p>Your tasks only show where things <strong>are</strong>. Commitments reflect where you want them <strong>to be</strong>.</p>
 				<p>In Dailyboard you visualize the desired state of your tasks by the end of a day. It gives you confidence everyone is on the same page.</p>`,
 			icon: RocketLaunchIcon,
