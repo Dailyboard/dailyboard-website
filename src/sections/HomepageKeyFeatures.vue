@@ -95,10 +95,10 @@
 
 	const features = [
 		{
-			name: 'Bring everyone together',
+			name: "Bring everyone's plans together",
 			description: `
 					<p>Everyone has to plan their day somehow - using a todo app, a piece of paper or just in their mind. Dailyboard simply provides a <strong>shared space</strong> for that.</p>
-					<p>Collecting the scattered plans in one place makes it possible to fully synchronize your work.</p>
+					<p>Collecting the scattered plans in one place is the first step to fully synchronize your work.</p>
 				`,
 			icon: SquaresPlusIcon,
 			delay: 100,
@@ -107,7 +107,7 @@
 				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470048/KeyFeatures__Sync_bgyeh7.png',
 		},
 		{
-			name: 'Pave your way to success',
+			name: 'Track your commitments',
 			description: `<p>Your tasks only show where things <strong>are</strong>. Commitments reflect where you want them <strong>to be</strong>.</p>
 				<p>In Dailyboard you visualize the desired state of your tasks by the end of a day. It gives you confidence everyone is on the same page.</p>`,
 			icon: RocketLaunchIcon,
@@ -117,7 +117,7 @@
 				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470047/KeyFeatures__Map_pf2nro.png',
 		},
 		{
-			name: 'Focus on the team',
+			name: 'Focus on team goals',
 			description: `
 				<p>"How can our team create <strong>the most value</strong> in the next 24h?" - it\'s the most important question of daily planning.</p>
 				<p>With Dailyboard it\'s much easier to answer the question together - spotting roadblocks and opportunities for help.</p>
