@@ -95,9 +95,9 @@
 
 	const features = [
 		{
-			name: "Bring everyone's plans together",
+			name: 'Bring everyone together',
 			description: `
-					<p>Everyone has to plan their day somehow - using a todo app, a piece of paper or just in their mind. Dailyboard simply provides a <strong>shared space</strong> for that.</p>
+					<p><strong>Everyone has to plan their day somehow</strong> - using a todo app, a piece of paper or just in their mind. Dailyboard simply provides a <strong>shared space</strong> for that.</p>
 					<p>Collecting the scattered plans in one place is the first step to fully synchronize your work.</p>
 				`,
 			icon: SquaresPlusIcon,
@@ -107,9 +107,9 @@
 				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470048/KeyFeatures__Sync_bgyeh7.png',
 		},
 		{
-			name: 'Track your commitments',
+			name: 'Design your day as a team',
 			description: `<p>Your tasks only show where things <strong>are</strong>. Commitments reflect where you want them <strong>to be</strong>.</p>
-				<p>In Dailyboard you visualize the desired state of your tasks by the end of a day. It gives you confidence everyone is on the same page.</p>`,
+				<p>Visually design the desired state of your tasks by the end of a day and be confident everyone's working towards it.</p>`,
 			icon: RocketLaunchIcon,
 			delay: 200,
 			reversed: true,
@@ -119,7 +119,7 @@
 		{
 			name: 'Focus on team goals',
 			description: `
-				<p>"How can our team create <strong>the most value</strong> in the next 24h?" - it\'s the most important question of daily planning.</p>
+				<p>"How can we create <strong>the most value</strong> in the next 24h?" - it\'s&nbsp;the fundamental question of daily planning.</p>
 				<p>With Dailyboard it\'s much easier to answer the question together - spotting roadblocks and opportunities for help.</p>
 			`,
 			icon: UserCircleIcon,
