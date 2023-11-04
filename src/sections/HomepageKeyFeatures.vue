@@ -9,7 +9,7 @@
 					One app to keep them all
 				</h2>
 				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-					Prioritize everything in one place
+					Design your day as a team
 				</p>
 				<p class="mt-6 text-lg leading-8 text-text-weak">
 					So many things require your team's attention - tasks, meetings, feedbacks
@@ -60,7 +60,7 @@
 				>
 					<div class="lg:max-w-lg">
 						<p
-							class="mt-2 text-xl font-bold tracking-tight sm:text-3xl flex items-center gap-6"
+							class="mt-2 text-xl font-bold tracking-tight sm:text-3xl flex items-center gap-3 sm:gap-6"
 						>
 							<component
 								class="h-6 w-6 text-text-primary-weak"
@@ -70,7 +70,7 @@
 							{{ feature.name }}
 						</p>
 						<div
-							class="mt-6 text-md leading-6 sm:text-lg sm:leading-8 text-text-weak flex flex-col gap-3"
+							class="mt-3 sm:mt-6 text-md leading-6 sm:text-lg sm:leading-8 text-text-weak flex flex-col gap-3"
 							v-html="feature.description"
 						/>
 					</div>
@@ -103,9 +103,9 @@
 
 	const features = [
 		{
-			name: `Quickly capture all commitments`,
+			name: `Quickly capture everything`,
 			description: `
-					<p>Bring all plans in one place with a few clicks. Track meetings, tasks and other things that you need time for.</p>
+					<p>Bring all your work in one place with a few clicks. Plan meetings, tasks and other things that you need time for.</p>
 				`,
 			mediaUrl:
 				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098651/all_commitments_ypxzjz.mp4',
