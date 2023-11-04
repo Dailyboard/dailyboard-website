@@ -9,7 +9,7 @@
 					One app to keep them all
 				</h2>
 				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-					Prioritize everything in a breeze
+					Prioritize everything in one place
 				</p>
 				<p class="mt-6 text-lg leading-8 text-text-weak">
 					So many things require your team's attention - tasks, meetings, feedbacks
@@ -21,7 +21,7 @@
 			<div
 				v-for="feature in features"
 				:key="feature.name"
-				class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center pb-32 sm:pb-48 relative"
+				class="mx-auto grid max-w-2xl grid-cols-1 gap-y-12 gap-x-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center pb-32 sm:pb-48 relative"
 			>
 				<div
 					class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -70,20 +70,24 @@
 							{{ feature.name }}
 						</p>
 						<div
-							class="mt-6 text-lg leading-8 text-text-weak flex flex-col gap-3"
+							class="mt-6 text-md leading-6 sm:text-lg sm:leading-8 text-text-weak flex flex-col gap-3"
 							v-html="feature.description"
 						/>
 					</div>
 				</div>
 				<video
-					:src="feature.mediaUrl"
 					autoplay
 					muted
 					loop
-					loading="lazy"
+					playsinline
+					preload="auto"
+					onplay="this.controls = false"
 					data-animate="animate-fade-left"
 					:data-delay="feature.reversed ? 0 : 600"
-				></video>
+					class="rounded"
+				>
+					<source class="rounded" type="video/mp4" :src="feature.mediaUrl" />
+				</video>
 			</div>
 		</div>
 	</div>
@@ -101,8 +105,7 @@
 		{
 			name: `Quickly capture all commitments`,
 			description: `
-					<p>Bring all plans in one place with a few clicks - meetings, tasks and other things that usually fly under the radar.</p>
-					<p>See your whole team's day at one glance and start your day confident that everyone's in sync.</p>
+					<p>Bring all plans in one place with a few clicks. Track meetings, tasks and other things that you need time for.</p>
 				`,
 			mediaUrl:
 				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098651/all_commitments_ypxzjz.mp4',
@@ -113,8 +116,7 @@
 		{
 			name: `Embrace teamwork`,
 			description: `
-					<p>Let the work flow from one person to another. Easily plan next steps for the same tasks.</p>
-					<p>Work together as a team to resolve any issues and move forward with confidence.</p>
+					<p>Work as a team to design a productive day. Move forward with confidence that everyone's in sync.</p>
 				`,
 			mediaUrl:
 				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098653/embrace_teamwork_sktfxt.mp4',
@@ -123,10 +125,9 @@
 			reversed: true,
 		},
 		{
-			name: `All your plans always at hand`,
+			name: `Have your plans always at hand`,
 			description: `
-					<p>Never loose track of the promises you made for different teams, task forces or other people you work with.</p>		
-					<p>See all commitments from other boards everywhere you go.</p>
+					<p>See all your commitments anywhere you go. Never loose track of the promises you made to others.</p>
 				`,
 			mediaUrl:
 				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098652/contexts_ttsbmp.mp4',
@@ -137,8 +138,7 @@
 		{
 			name: `Effortless status updates`,
 			description: `
-					<p>Easily track status of your commitments - what's done, what needs more attention and what was blocked.</p>
-					<p>Forget about constant questions about status of your work and confirming that you have something planned.</p>
+					<p>Easily share what's done and what needs more attention. No more asking about status of someone's work.</p>
 				`,
 			mediaUrl:
 				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098660/distractions_status_bxxz6u.mp4',
