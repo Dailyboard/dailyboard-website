@@ -33,9 +33,11 @@
 			/>
 		</div>
 		<div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-			<h2 class="text-base font-semibold leading-7 text-text-primary">Pricing</h2>
+			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
+				Satisfaction guaranteed
+			</h2>
 			<p class="mt-2 text-2xl font-bold tracking-tight text-text sm:text-4xl">
-				Get results or your money back
+				Invest in your time
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
 				With Dailyboard you buy your&nbsp;team's&nbsp;time for&nbsp;a&nbsp;fraction
@@ -61,7 +63,10 @@
 					'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10',
 				]"
 			>
-				<h3 :id="tier.id" class="text-base font-semibold leading-7 text-text-primary">
+				<h3
+					:id="tier.id"
+					class="text-base font-semibold leading-7 text-text-primary-weak"
+				>
 					{{ tier.name }}
 				</h3>
 				<p class="mt-4 flex items-baseline gap-x-2">
@@ -77,7 +82,7 @@
 				>
 					<li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
 						<CheckIcon
-							class="h-6 w-5 flex-none text-text-primary"
+							class="h-6 w-5 flex-none text-text-primary-weak"
 							aria-hidden="true"
 						/>
 						{{ feature }}
@@ -107,6 +112,7 @@
 				'Workflow consultations',
 				'Unlimited boards',
 				'Full commitments history',
+				'Unconditional refund within the first 60 days',
 			],
 			featured: true,
 		},
