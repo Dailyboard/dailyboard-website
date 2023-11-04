@@ -1,19 +1,20 @@
 <template>
 	<div id="how-it-works" class="overflow-hidden relative isolate" ref="target">
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8">
 			<div
-				class="mx-auto max-w-2xl py-24 sm:py-32 lg:text-center"
+				class="mx-auto max-w-3xl py-24 sm:py-32 lg:text-center"
 				data-animate="animate-fade-left"
 			>
 				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
-					Commit to succeed
+					One app to keep them all
 				</h2>
 				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-					Rediscover teamwork
+					Prioritize everything in a breeze
 				</p>
 				<p class="mt-6 text-lg leading-8 text-text-weak">
-					Dailyboard provides a unique way to plan your day as a team,
-					using&nbsp;the&nbsp;power&nbsp;of <strong>public&nbsp;commitments</strong>.
+					So many things require your team's attention - tasks, meetings, feedbacks
+					etc. You need a single place to capture all of them and design your day
+					together for the most impact.
 				</p>
 			</div>
 
@@ -26,7 +27,10 @@
 					class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 				>
 					<svg
-						class="relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+						:class="[
+							feature.gradientRotation,
+							'relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 sm:left-[calc(50%-30rem)] sm:h-[42.375rem]',
+						]"
 						viewBox="0 0 1155 678"
 					>
 						<path
@@ -71,16 +75,15 @@
 						/>
 					</div>
 				</div>
-				<img
-					:src="feature.imageUrl"
-					alt="Dailyboard - Board screenshot"
+				<video
+					:src="feature.mediaUrl"
+					autoplay
+					muted
+					loop
 					loading="lazy"
-					decoding="async"
 					data-animate="animate-fade-left"
 					:data-delay="feature.reversed ? 0 : 600"
-					width="576"
-					height="864"
-				/>
+				></video>
 			</div>
 		</div>
 	</div>
@@ -88,45 +91,60 @@
 
 <script setup lang="ts">
 	import {
-		RocketLaunchIcon,
 		SquaresPlusIcon,
-		UserCircleIcon,
+		UserGroupIcon,
+		ArrowsPointingInIcon,
+		CheckBadgeIcon,
 	} from '@heroicons/vue/20/solid';
 
 	const features = [
 		{
-			name: 'Bring everyone together',
+			name: `Quickly capture all commitments`,
 			description: `
-					<p><strong>Everyone has to plan their day somehow</strong> - using a todo app, a piece of paper or just in their mind. Dailyboard simply provides a <strong>shared space</strong> for that.</p>
-					<p>Collecting the scattered plans in one place is the first step to fully synchronize your work.</p>
+					<p>Bring all plans in one place with a few clicks - meetings, tasks and other things that usually fly under the radar.</p>
+					<p>See your whole team's day at one glance and start your day confident that everyone's in sync.</p>
 				`,
-			icon: SquaresPlusIcon,
-			delay: 100,
+			mediaUrl:
+				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098651/all_commitments_ypxzjz.mp4',
+			icon: ArrowsPointingInIcon,
+			gradientRotation: 'rotate-[210deg]',
 			reversed: false,
-			imageUrl:
-				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470048/KeyFeatures__Sync_bgyeh7.png',
 		},
 		{
-			name: 'Design your day as a team',
-			description: `<p>Your tasks only show where things <strong>are</strong>. Commitments reflect where you want them <strong>to be</strong>.</p>
-				<p>Visually design the desired state of your tasks by the end of a day and be confident everyone's working towards it.</p>`,
-			icon: RocketLaunchIcon,
-			delay: 200,
-			reversed: true,
-			imageUrl:
-				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470047/KeyFeatures__Map_pf2nro.png',
-		},
-		{
-			name: 'Focus on team goals',
+			name: `Embrace teamwork`,
 			description: `
-				<p>"How can we create <strong>the most value</strong> in the next 24h?" - it\'s&nbsp;the fundamental question of daily planning.</p>
-				<p>With Dailyboard it\'s much easier to answer the question together - spotting roadblocks and opportunities for help.</p>
-			`,
-			icon: UserCircleIcon,
-			delay: 300,
+					<p>Let the work flow from one person to another. Easily plan next steps for the same tasks.</p>
+					<p>Work together as a team to resolve any issues and move forward with confidence.</p>
+				`,
+			mediaUrl:
+				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098653/embrace_teamwork_sktfxt.mp4',
+			icon: UserGroupIcon,
+			gradientRotation: 'rotate-[215deg]',
+			reversed: true,
+		},
+		{
+			name: `All your plans always at hand`,
+			description: `
+					<p>Never loose track of the promises you made for different teams, task forces or other people you work with.</p>		
+					<p>See all commitments from other boards everywhere you go.</p>
+				`,
+			mediaUrl:
+				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098652/contexts_ttsbmp.mp4',
+			icon: SquaresPlusIcon,
+			gradientRotation: 'rotate-[115deg]',
 			reversed: false,
-			imageUrl:
-				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698470047/KeyFeatures__Team_khcxdj.png',
+		},
+		{
+			name: `Effortless status updates`,
+			description: `
+					<p>Easily track status of your commitments - what's done, what needs more attention and what was blocked.</p>
+					<p>Forget about constant questions about status of your work and confirming that you have something planned.</p>
+				`,
+			mediaUrl:
+				'https://res.cloudinary.com/dl5xtsolh/video/upload/v1699098660/distractions_status_bxxz6u.mp4',
+			icon: CheckBadgeIcon,
+			gradientRotation: 'rotate-[220deg]',
+			reversed: true,
 		},
 	];
 </script>
