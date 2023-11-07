@@ -33,9 +33,7 @@
 			/>
 		</div>
 		<div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
-				Create more value
-			</h2>
+			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">Pricing</h2>
 			<p class="mt-2 text-2xl font-bold tracking-tight text-text sm:text-4xl">
 				Invest in your time
 			</p>

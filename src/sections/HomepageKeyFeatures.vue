@@ -1,12 +1,12 @@
 <template>
-	<div id="how-it-works" class="overflow-hidden relative isolate" ref="target">
+	<div id="features" class="overflow-hidden relative isolate" ref="target">
 		<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8">
 			<div
 				class="mx-auto max-w-3xl py-24 sm:py-32 lg:text-center"
 				data-animate="animate-fade-left"
 			>
 				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
-					One app to keep them all
+					Features
 				</h2>
 				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
 					Design your day as a team
@@ -59,7 +59,7 @@
 					:data-delay="feature.reversed ? 600 : 0"
 				>
 					<div class="lg:max-w-lg">
-						<p
+						<h3
 							class="mt-2 text-xl font-bold tracking-tight sm:text-3xl flex items-center gap-3 sm:gap-6"
 						>
 							<component
@@ -68,7 +68,7 @@
 								aria-hidden="true"
 							/>
 							{{ feature.name }}
-						</p>
+						</h3>
 						<div
 							class="mt-3 sm:mt-6 text-md leading-6 sm:text-lg sm:leading-8 text-text-weak flex flex-col gap-3"
 							v-html="feature.description"

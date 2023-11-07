@@ -3,9 +3,10 @@ import Footer from '../sections/Footer.astro';
 
 export interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const isDev = import.meta.env.DEV;
 ---
 
@@ -26,6 +27,8 @@ const isDev = import.meta.env.DEV;
 
 			gtag('config', 'G-SG37KNKHFJ');
 		</script>
+		<title>{title}</title>
+		<meta name="description" content={description} />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -43,7 +46,6 @@ const isDev = import.meta.env.DEV;
 		/>
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{title}</title>
 	</head>
 	<body class="bg-background text-text">
 		<slot />

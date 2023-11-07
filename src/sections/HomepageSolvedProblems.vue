@@ -1,9 +1,7 @@
 <template>
 	<div class="mx-auto py-12 max-w-7xl px-6 sm:py-16 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:text-center" data-animate="animate-fade-left">
-			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
-				Share the flow
-			</h2>
+			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">Benefits</h2>
 			<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
 				Rediscover teamwork
 			</p>
@@ -49,9 +47,6 @@
 		ArrowTrendingUpIcon,
 		BoltIcon,
 		ChevronDoubleUpIcon,
-		ClockIcon,
-		QuestionMarkCircleIcon,
-		SunIcon,
 	} from '@heroicons/vue/20/solid';
 
 	const primaryFeatures = [
