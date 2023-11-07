@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
 import vue from '@astrojs/vue';
 import partytown from '@astrojs/partytown';
+import robotsTxt from 'astro-robots-txt';
+
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +16,8 @@ export default defineConfig({
 		}),
 		tailwind(),
 		vue(),
+		robotsTxt(),
+		sitemap(),
 	],
 	server: {
 		port: 3001,
