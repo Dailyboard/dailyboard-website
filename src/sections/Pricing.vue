@@ -38,9 +38,9 @@
 				Invest in your time
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
-				With Dailyboard you buy your&nbsp;team's&nbsp;time for&nbsp;a&nbsp;fraction
-				of&nbsp;its&nbsp;cost. If&nbsp;you&nbsp;don't&nbsp;see results in 60 days, get
-				an unconditional refund.
+				Imagine you'd get <strong class="decoration-text-primary-weak underline-offset-4 underline">an&nbsp;extra&nbsp;hour&nbsp;a&nbsp;month</strong> from each of your&nbsp;teammates.
+				With&nbsp;Dailyboard you buy this&nbsp;time for&nbsp;a&nbsp;fraction
+				of&nbsp;its&nbsp;cost.
 			</p>
 		</div>
 		<div
