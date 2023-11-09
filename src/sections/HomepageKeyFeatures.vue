@@ -1,12 +1,12 @@
 <template>
-	<div id="features" class="overflow-hidden relative isolate" ref="target">
+	<div id="how-does-it-work" class="overflow-hidden relative isolate" ref="target">
 		<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8">
 			<div
 				class="mx-auto max-w-3xl py-24 sm:py-32 lg:text-center"
 				data-animate="animate-fade-left"
 			>
 				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
-					Features
+					How does it work?
 				</h2>
 				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
 					Design your day as a team
