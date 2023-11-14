@@ -9,6 +9,7 @@ module.exports = {
 		extend: {
 			colors: {
 				background: colors.gray[950],
+				'background-weak': colors.gray[900],
 				'background-primary': colors.emerald[600],
 				'background-primary-hover': colors.emerald[500],
 				'outline-primary': colors.emerald[500],

@@ -1,0 +1,78 @@
+---
+import Testimonial from '../components/Testimonial.astro';
+
+const testimonials = [
+	{
+		body: 'Dailyboard has transformed my daily and weekly planning routine. While managing various projects, I used to struggle to find a central location that listed all tasks my partners and I had to complete in a single day. Now, thanks to Dailyboard, we have a clear overview of what each team member is working on and why, making our daily coordination more efficient.',
+		author: {
+			name: 'Mikołaj Kolasiński',
+			role: 'Managing director',
+			imageUrl:
+				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1699996172/dailyboard__testimonials_mk_ghac0k.jpg',
+		},
+	},
+	{
+		body: 'Implementing Dailyboard has markedly improved our team coordination, providing a clear structure for our weekly tasks and daily meetings. Its user-friendly interface fosters a collaborative environment that enhances communication and keeps the entire team aligned with our project goals.',
+		author: {
+			name: 'Miłosz Bednarzak',
+			role: 'Data Engineering Manager',
+			imageUrl:
+				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1699996136/dailyboard__testimonials_mb_xwalcm.jpg',
+		},
+	},
+	{
+		body: `In my daily routine, I often lacked a more detailed insight into the team's work plan. A list of tasks with deadlines was not enough, especially when dividing my time between multiple projects. We were looking for a solution that would help us capture all dependencies and take into account our individual workloads. Dailyboard helped us effectively allocate our time and support each other in tasks that require collaboration.`,
+		author: {
+			name: 'Ewa Kamińska',
+			role: 'UX/UI Lead',
+			imageUrl:
+				'https://res.cloudinary.com/dl5xtsolh/image/upload/v1699996894/dailyboard__testimonials_ek_hqfiig.jpg',
+		},
+	},
+];
+---
+
+<div class="relative py-24 sm:py-32">
+	<div
+		class="absolute inset-x-0 -top-100 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+	>
+		<svg
+			class="relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[240deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+			viewBox="0 0 1155 678"
+		>
+			<path
+				fill="url(#f4773080-2a16-4ab4-9fd7-579fec69a4f7)"
+				fill-opacity=".2"
+				d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+			></path>
+			<defs>
+				<linearGradient
+					id="f4773080-2a16-4ab4-9fd7-579fec69a4f7"
+					x1="1155.49"
+					x2="-78.208"
+					y1=".177"
+					y2="474.645"
+					gradientUnits="userSpaceOnUse"
+				>
+					<stop stop-color="#34d399"></stop>
+					<stop offset="1" stop-color="#0d9488"></stop>
+				</linearGradient>
+			</defs>
+		</svg>
+	</div>
+	<div class="max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center">
+			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
+				Testimonials
+			</h2>
+			<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
+				Dailyboard is a game-changer for a variety of teams
+			</p>
+		</div>
+		<div class="flex justify-center mt-8 sm:mt-12">
+			<div class="grid grid-cols-1 lg:grid-cols-3">
+				{testimonials.map((testimonial) => <Testimonial testimonial={testimonial} />)}
+			</div>
+		</div>
+	</div>
+</div>
