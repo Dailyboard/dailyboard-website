@@ -1,7 +1,7 @@
 <template>
 	<div
 		id="pricing"
-		class="relative isolate bg-background px-6 pt-32 sm:pt-56 lg:px-8"
+		class="relative isolate bg-background px-6 pt-24 sm:pt-32 lg:px-8"
 		data-animate="animate-fade-left"
 	>
 		<div
@@ -38,9 +38,12 @@
 				Invest in your time
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
-				Imagine you'd get <strong class="decoration-text-primary-weak underline-offset-4 underline">an&nbsp;extra&nbsp;hour&nbsp;a&nbsp;month</strong> from each of your&nbsp;teammates.
-				With&nbsp;Dailyboard you buy this&nbsp;time for&nbsp;a&nbsp;fraction
-				of&nbsp;its&nbsp;cost.
+				Imagine you'd get
+				<strong class="decoration-text-primary-weak underline-offset-4 underline"
+					>an&nbsp;extra&nbsp;hour&nbsp;a&nbsp;month</strong
+				>
+				from each of your&nbsp;teammates. With&nbsp;Dailyboard you buy this&nbsp;time
+				for&nbsp;a&nbsp;fraction of&nbsp;its&nbsp;cost.
 			</p>
 		</div>
 		<div
