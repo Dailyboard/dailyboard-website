@@ -14,9 +14,7 @@ const { testimonial } = Astro.props;
 ---
 
 <div class="max-w-md pt-8 sm:inline-block sm:w-full sm:px-4">
-	<figure
-		class="rounded-2xl bg-background-weak/30 backdrop-blur backdrop-blur-lg p-8 text-base leading-6"
-	>
+	<figure class="rounded-2xl bg-background-weak/30 backdrop-blur-lg p-8 text-base leading-6">
 		<p>{testimonial.body}</p>
 		<figcaption class="mt-6 flex items-center gap-x-4">
 			<img class="h-10 w-10 rounded-full" src={testimonial.author.imageUrl} alt="" />
