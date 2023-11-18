@@ -1,4 +1,25 @@
-<template>
+---
+import { Icon } from 'astro-icon';
+import TryCtaScroll from '../components/TryCtaScroll.astro';
+
+const tiers = [
+		{
+			name: 'Pioneers',
+			id: 'tier-pioneers',
+			priceMonthly: '$5',
+			description:
+				'Get early access and receive a custom-tailored onboarding and workflow consultation from our team.',
+			features: [
+				'Custom onboarding experience',
+				'Workflow consultations',
+				'Unlimited boards',
+				'Full commitments history',
+				'Unconditional refund within the first 60 days',
+			],
+			featured: true,
+		},
+	];
+---
 	<div
 		id="pricing"
 		class="relative isolate bg-background px-6 pt-24 sm:pt-32 lg:px-8"
@@ -49,87 +70,50 @@
 		<div
 			class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:grid-cols-1"
 		>
+			{tiers.map((tier, tierIdx) => (
 			<div
-				v-for="(tier, tierIdx) in tiers"
-				:key="tier.id"
-				:class="[
+				class={[
 					tier.featured
 						? 'relative bg-background/70 shadow-2xl'
 						: 'bg-background/60 sm:mx-8 lg:mx-0',
 					tier.featured
 						? ''
 						: tierIdx === 0
-						? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
-						: 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
+							? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
+							: 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
 					'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10',
-				]"
+				].join()}
 			>
 				<h3
 					:id="tier.id"
 					class="text-base font-semibold leading-7 text-text-primary-weak"
 				>
-					{{ tier.name }}
+					{tier.name}
 				</h3>
 				<p class="mt-4 flex items-baseline gap-x-2">
-					<span class="text-5xl font-bold tracking-tight text-text">{{
-						tier.priceMonthly
-					}}</span>
+					<span class="text-5xl font-bold tracking-tight text-text">{tier.priceMonthly}</span>
 					<span class="text-base text-gray-400">/ user / mo.</span>
 				</p>
-				<p class="mt-6 text-base leading-7 text-text-weak">{{ tier.description }}</p>
+				<p class="mt-6 text-base leading-7 text-text-weak">{tier.description}</p>
 				<ul
 					role="list"
 					class="mt-8 space-y-3 text-sm leading-6 text-text-weak sm:mt-10"
 				>
-					<li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
-						<CheckIcon
-							class="h-6 w-5 flex-none text-text-primary-weak"
-							aria-hidden="true"
-						/>
-						{{ feature }}
-					</li>
+					{tier.features.map((feature) => (
+						<li class="flex gap-x-3">
+							<Icon
+								name="ph:check-duotone"
+								class="h-6 w-5 flex-none text-text-primary-weak"
+								aria-hidden="true"
+							/>
+							{feature}
+						</li>
+					))}
 				</ul>
 				<div class="flex justify-center pt-8 lg:hidden">
 					<TryCtaScroll />
 				</div>
 			</div>
+			))}
 		</div>
 	</div>
-</template>
-
-<script setup>
-	import TryCtaScroll from '../components/TryCtaScroll.vue';
-	import { CheckIcon } from '@heroicons/vue/20/solid';
-
-	const tiers = [
-		{
-			name: 'Pioneers',
-			id: 'tier-pioneers',
-			priceMonthly: '$5',
-			description:
-				'Get early access and receive a custom-tailored onboarding and workflow consultation from our team.',
-			features: [
-				'Custom onboarding experience',
-				'Workflow consultations',
-				'Unlimited boards',
-				'Full commitments history',
-				'Unconditional refund within the first 60 days',
-			],
-			featured: true,
-		},
-		// {
-		// 	name: 'Regular',
-		// 	id: 'tier-regular',
-		// 	href: '#',
-		// 	priceMonthly: '$5',
-		// 	description: 'A plan that scales with your rapidly growing business.',
-		// 	features: [
-		// 		'Priority support',
-		// 		'Single sign-on',
-		// 		'Enterprise integrations',
-		// 		'Custom reporting tools',
-		// 	],
-		// 	featured: false,
-		// },
-	];
-</script>
