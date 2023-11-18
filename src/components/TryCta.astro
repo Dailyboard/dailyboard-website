@@ -1,4 +1,6 @@
 ---
+import Button from '../ui/Button.astro';
+
 const config = {
 	email: 'pioneers@dailyboard.io',
 	subject: `I want to join!`,
@@ -10,10 +12,4 @@ const href = `mailto:${config.email}?subject=${encodeURIComponent(
 )}&body=${encodeURIComponent(config.body)}`;
 ---
 
-<a
-	href={href}
-	class="rounded-md bg-background-primary px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-background-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-	target="_blank"
->
-	Get early access
-</a>
+<Button href={href} target="_blank">Get early access</Button>
