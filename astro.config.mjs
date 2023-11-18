@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import vue from '@astrojs/vue';
 import partytown from '@astrojs/partytown';
 import robotsTxt from 'astro-robots-txt';
 
@@ -15,7 +14,6 @@ export default defineConfig({
 			},
 		}),
 		tailwind(),
-		vue(),
 		robotsTxt(),
 		sitemap(),
 	],
