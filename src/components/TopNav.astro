@@ -1,14 +1,44 @@
 ---
 import TryCtaScroll from './TryCtaScroll.astro';
+
+const { pathname } = Astro.url;
+const isHome = pathname === '/';
+
+const links = [
+	{
+		href: '#how-does-it-work',
+		text: 'How does it work?',
+	},
+	{
+		href: '#is-it-for-me',
+		text: 'Is it for me?',
+	},
+	{
+		href: '#pricing',
+		text: 'Pricing',
+	},
+	{
+		href: '/posts',
+		text: 'Blog',
+	},
+];
+
+function isLocalHref(href: string) {
+	return href.startsWith('#');
+}
+
+function getHref(href: string, isHome: boolean) {
+	return !isHome && isLocalHref(href) ? `/${href}` : href;
+}
 ---
 
 <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 	<div class="flex lg:flex-1">
 		<a
-			href="#top"
+			href={isHome ? '#top' : '/'}
+			{...isHome && { 'data-scroll': true }}
+			{...isHome && { 'data-mt-duration': 1000 }}
 			class="-m-1.5 p-1.5 flex items-center"
-			data-scroll
-			data-mt-duration="1000"
 		>
 			<span class="sr-only">Dailyboard</span>
 			<img
@@ -20,26 +50,20 @@ import TryCtaScroll from './TryCtaScroll.astro';
 		</a>
 	</div>
 	<div class="hidden lg:flex items-center gap-8">
-		<a
-			href="#how-does-it-work"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">How does it work?</a
-		>
-		<a
-			href="#is-it-for-me"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">Is it for me?</a
-		>
-		<a
-			href="#pricing"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">Pricing</a
-		>
+		{
+			links.map((link) => (
+				<a
+					href={getHref(link.href, isHome)}
+					class="hover:text-text-primary-weak font-extrabold transition-colors"
+					{...(isHome && isLocalHref(link.href) && { 'data-scroll': true })}
+					{...(isHome && isLocalHref(link.href) && { 'data-mt-duration': 1000 })}
+				>
+					{link.text}
+				</a>
+			))
+		}
 	</div>
 	<div class="flex flex-1 justify-end">
-		<TryCtaScroll client:load />
+		<TryCtaScroll />
 	</div>
 </nav>

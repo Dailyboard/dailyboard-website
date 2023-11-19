@@ -7,6 +7,9 @@ module.exports = {
 			sans: ['Inter', 'sans-serif'],
 		},
 		extend: {
+			aspectRatio: {
+				'4/3': '4/3',
+			},
 			colors: {
 				background: colors.gray[950],
 				'background-weak': colors.gray[900],
@@ -17,6 +20,7 @@ module.exports = {
 				'text-weak': colors.gray[200],
 				'text-primary': colors.emerald[600],
 				'text-primary-weak': colors.emerald[300],
+				'shadow-primary': colors.emerald[800],
 			},
 			animation: {
 				'fade-left': 'fadeLeft 800ms ease-in-out',
@@ -44,10 +48,23 @@ module.exports = {
 					},
 				},
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						color: colors.gray[50],
+						a: {
+							color: colors.emerald[300],
+							'&:hover': {
+								color: colors.emerald[400],
+							},
+						},
+					},
+				},
+			},
 		},
 	},
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 };
