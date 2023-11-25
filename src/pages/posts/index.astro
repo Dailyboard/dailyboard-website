@@ -21,8 +21,7 @@ const allPosts = await getCollection('posts');
 					<a href={`/posts/${post.slug}`}>
 						<li class="transition-transform group rounded-lg flex flex-col bg-background-weak min-h-[200px] sm:grid sm:grid-cols-[1fr_2fr] sm:hover:scale-[1.015]">
 							<img
-								src={post.data.imageUrl}
-								alt={post.data.imageAlt}
+								{...post.data.image}
 								class="rounded-t-lg aspect-video object-cover self-stretch sm:rounded-l-lg sm:rounded-tr-none"
 							/>
 							<div class="p-4 flex flex-col gap-4">
