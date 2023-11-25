@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import TryCtaScroll from '../components/TryCtaScroll.astro';
+import TryCta from '../components/TryCta.astro';
 
 const tiers = [
 		{
@@ -110,9 +110,12 @@ const tiers = [
 						</li>
 					))}
 				</ul>
-				<div class="flex justify-center pt-8 lg:hidden">
-					<TryCtaScroll />
+				<div class="flex justify-center pt-8">
+					<TryCta />
 				</div>
+				<div class="text-center text-sm text-text-weak mt-4">
+						30-day trial, no card required
+					</div>
 			</div>
 			))}
 		</div>
