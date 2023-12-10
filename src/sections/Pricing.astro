@@ -1,17 +1,16 @@
 ---
 import { Icon } from 'astro-icon';
-import TryCtaScroll from '../components/TryCtaScroll.astro';
+import TryCta from '../components/TryCta.astro';
 
 const tiers = [
 		{
 			name: 'Pioneers',
 			id: 'tier-pioneers',
-			priceMonthly: '$5',
+			priceMonthly: '$4',
 			description:
 				'Get early access and receive a custom-tailored onboarding and workflow consultation from our team.',
 			features: [
 				'Custom onboarding experience',
-				'Workflow consultations',
 				'Unlimited boards',
 				'Full commitments history',
 				'Unconditional refund within the first 60 days',
@@ -110,9 +109,12 @@ const tiers = [
 						</li>
 					))}
 				</ul>
-				<div class="flex justify-center pt-8 lg:hidden">
-					<TryCtaScroll />
+				<div class="flex justify-center pt-8">
+					<TryCta />
 				</div>
+				<div class="text-center text-sm text-text-weak mt-4">
+						30-day trial, no card required
+					</div>
 			</div>
 			))}
 		</div>
