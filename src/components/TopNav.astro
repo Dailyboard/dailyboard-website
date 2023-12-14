@@ -1,6 +1,5 @@
 ---
 import TryCta from './TryCta.astro';
-import TryCtaScroll from './TryCtaScroll.astro';
 
 const { pathname } = Astro.url;
 const isHome = pathname === '/';
@@ -69,6 +68,6 @@ function getHref(href: string, isHome: boolean) {
 		}
 	</div>
 	<div class="flex flex-1 justify-end">
-		{isHome ? <TryCtaScroll /> : <TryCta />}
+		<TryCta />
 	</div>
 </nav>
