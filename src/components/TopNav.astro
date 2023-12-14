@@ -58,7 +58,10 @@ function getHref(href: string, isHome: boolean) {
 			links.map((link) => (
 				<a
 					href={getHref(link.href, isHome)}
-					class="hover:text-text-primary-weak font-extrabold transition-colors"
+					class:list={[
+						'hover:text-text-primary-weak font-extrabold transition-colors',
+						{ 'text-text-primary-weak': pathname.includes(link.href) },
+					]}
 					{...(isHome && isLocalHref(link.href) && { 'data-scroll': true })}
 					{...(isHome && isLocalHref(link.href) && { 'data-mt-duration': 1000 })}
 				>
