@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Footer from '../sections/Footer.astro';
 import TopNav from '../components/TopNav.astro';
 
@@ -45,6 +46,8 @@ const isDev = import.meta.env.DEV;
 		/>
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<ViewTransitions />
 	</head>
 	<body class="bg-background text-text">
 		<header

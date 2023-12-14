@@ -1,0 +1,56 @@
+---
+import Container from '../components/Container.astro';
+import TextImageSection from '../components/SectionTextMedia.astro';
+
+const features = [
+	{
+		name: `Timezones`,
+		description: `
+					<p>Create shared boards to see commitments from selected people in a single place, but still access their commitments from other boards.</p>
+				`,
+		media: {
+			type: 'image',
+			url: 'https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png',
+		},
+		icon: 'ph:arrows-in-duotone',
+		gradientRotation: 'rotate-[210deg]',
+		reversed: false,
+	},
+	{
+		name: `Multiple organizations`,
+		description: `
+					<p>After planning your day with your teams, use personal board to manage your own agenda.</p>
+				`,
+		media: {
+			type: 'image',
+			url: 'https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard_homepage_hero_app_screenshot.png',
+		},
+		icon: 'ph:users-three-duotone',
+		gradientRotation: 'rotate-[215deg]',
+		reversed: true,
+	},
+];
+---
+
+<Container>
+	<div class="overflow-hidden relative isolate">
+		<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8">
+			<div
+				class="mx-auto max-w-3xl py-24 sm:py-32 lg:text-center"
+				data-animate="animate-fade-left"
+			>
+				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
+					Commitments
+				</h2>
+				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
+					A new way to plan a day
+				</p>
+				<p class="mt-6 text-lg leading-8 text-text-weak">
+					See how our unique set of features is optimized for daily planning for your
+					whole organization.
+				</p>
+			</div>
+		</div>
+	</div>
+	{features.map((feature) => <TextImageSection data={feature} />)}
+</Container>

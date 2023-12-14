@@ -1,0 +1,92 @@
+---
+import Icon from 'astro-icon';
+
+interface Props {
+	data: {
+		name: string;
+		description: string;
+		media: {
+			type: string;
+			url: string;
+			alt?: string;
+		};
+		icon: string;
+		gradientRotation: string;
+		reversed: boolean;
+	};
+}
+
+const { data } = Astro.props;
+---
+
+<div
+	class="mx-auto grid max-w-2xl grid-cols-1 gap-y-12 gap-x-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center pb-32 sm:pb-48 relative"
+>
+	<div
+		class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+	>
+		<svg
+			class:list={[
+				data.gradientRotation,
+				'relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 sm:left-[calc(50%-30rem)] sm:h-[42.375rem]',
+			]}
+			viewBox="0 0 1155 678"
+		>
+			<path
+				fill="url(#f4773080-2a16-4ab4-9fd7-579fec69a4f7)"
+				fill-opacity=".2"
+				d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+			></path>
+			<defs>
+				<linearGradient
+					id="f4773080-2a16-4ab4-9fd7-579fec69a4f7"
+					x1="1155.49"
+					x2="-78.208"
+					y1=".177"
+					y2="474.645"
+					gradientUnits="userSpaceOnUse"
+				>
+					<stop stop-color="#34d399"></stop>
+					<stop offset="1" stop-color="#0d9488"></stop>
+				</linearGradient>
+			</defs>
+		</svg>
+	</div>
+	<div
+		class:list={{ 'lg:order-last': data.reversed }}
+		data-animate="animate-fade-left"
+		data-delay={data.reversed ? 600 : 0}
+	>
+		<div class="lg:max-w-lg">
+			<h3
+				class="mt-2 text-xl font-bold tracking-tight sm:text-3xl flex items-center gap-3 sm:gap-6"
+			>
+				<Icon name={data.icon} class="h-6 w-6 text-text-primary-weak" />
+				{data.name}
+			</h3>
+			<div
+				class="mt-3 sm:mt-6 text-md leading-6 sm:text-lg sm:leading-8 text-text-weak flex flex-col gap-3"
+				set:html={data.description}
+			/>
+		</div>
+	</div>
+	{data.media.type === 'image' && <img src={data.media.url} alt={data.media.alt} />}
+	{
+		data.media.type === 'video' && (
+			<video
+				v-else
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="auto"
+				onplay="this.controls = false"
+				data-animate="animate-fade-left"
+				data-delay={data.reversed ? 0 : 600}
+				class="rounded"
+			>
+				<source class="rounded" type="video/mp4" src={data.media.url} />
+			</video>
+		)
+	}
+</div>
