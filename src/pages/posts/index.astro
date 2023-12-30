@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import ContentPage from '../../layouts/ContentPage.astro';
+import FormattedDate from '../../ui/FormattedDate.astro';
+
+const data = {
+	title: 'Blog',
+	description:
+		'Dailyboard is a lightweight tool for organizing your day as a team. Rediscover teamwork, share the flow and create more value together!',
+};
+
+const allPosts = await getCollection('posts');
+---
+
+<ContentPage {...data}>
+	<ul class="flex flex-col gap-12">
+		{
+			allPosts
+				.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+				.map((post) => (
+					<a href={`/posts/${post.slug}`}>
+						<li class="transition-transform group rounded-lg flex flex-col bg-background-weak min-h-[200px] sm:grid sm:grid-cols-[1fr_2fr] sm:hover:scale-[1.015]">
+							<img
+								{...post.data.image}
+								class="rounded-t-lg aspect-video object-cover self-stretch sm:rounded-l-lg sm:rounded-tr-none"
+							/>
+							<div class="p-4 flex flex-col gap-4">
+								<div class="text-text-weak uppercase text-xs font-extrabold">
+									<FormattedDate date={post.data.pubDate} />
+								</div>
+								<h2 class="text-2xl font-extrabold group-hover:text-text-primary-weak transition-colors">
+									{post.data.title}
+								</h2>
+								<div>{post.data.description}</div>
+							</div>
+						</li>
+					</a>
+				))
+		}
+	</ul>
+</ContentPage>

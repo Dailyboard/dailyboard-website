@@ -1,0 +1,24 @@
+---
+import ContentContainer from '../ui/ContentContainer.astro';
+import Layout from './Layout.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	image: { src: string; alt: string };
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+	<ContentContainer>
+		<article class="pt-12">
+			<img {...image} class="rounded-lg object-cover aspect-video" />
+			<h1 class="text-4xl font-extrabold py-12">{title}</h1>
+			<div class="prose prose-invert">
+				<slot />
+			</div>
+		</article>
+	</ContentContainer>
+</Layout>

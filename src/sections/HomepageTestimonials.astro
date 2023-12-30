@@ -1,5 +1,6 @@
 ---
 import Testimonial from '../components/Testimonial.astro';
+import TextGradient from '../components/TextGradient.astro';
 
 const testimonials = [
 	{
@@ -37,7 +38,7 @@ const testimonials = [
 		class="absolute inset-x-0 -top-100 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 	>
 		<svg
-			class="relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[240deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+			class="relative left-[calc(50%-11rem)] -z-10 mt-80 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[40deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
 			viewBox="0 0 1155 678"
 		>
 			<path
@@ -66,7 +67,8 @@ const testimonials = [
 				Testimonials
 			</h2>
 			<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
-				Dailyboard is a game-changer for a variety of teams
+				Dailyboard is a <TextGradient>game-changer</TextGradient>
+				<br class="hidden lg:block" /> for&nbsp;a&nbsp;variety of teams
 			</p>
 		</div>
 		<div class="flex justify-center mt-8 sm:mt-12">

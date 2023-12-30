@@ -1,22 +1,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import partytown from '@astrojs/partytown';
 import robotsTxt from 'astro-robots-txt';
-
 import sitemap from '@astrojs/sitemap';
+
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		partytown({
-			config: {
-				forward: ['dataLayer.push'],
-			},
-		}),
-		tailwind(),
-		robotsTxt(),
-		sitemap(),
-	],
+	site: 'https://dailyboard.io',
+	prefetch: true,
+	integrations: [tailwind(), robotsTxt(), sitemap(), mdx()],
 	server: {
 		port: 3001,
 		host: true,

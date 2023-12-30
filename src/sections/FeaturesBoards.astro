@@ -1,0 +1,69 @@
+---
+import Container from '../components/Container.astro';
+import TextImageSection from '../components/SectionTextMedia.astro';
+
+const features = [
+	{
+		name: `Shared boards`,
+		description: `
+					<p>Create shared boards for every team or any context you work in. Have a bird's eye view on everyone's plans for a day and status of their commitments.</p>
+				`,
+		media: {
+			type: 'image',
+			url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1701378906/dailyboard__pl__shared_board.png',
+		},
+		icon: 'ph:arrows-in-duotone',
+		gradientRotation: 'rotate-[210deg]',
+		reversed: false,
+	},
+	{
+		name: `Personal board`,
+		description: `
+					<p>Plan your day as a team, and then use personal board to focus. See personal boards of other people to check the status of anything that's important to you.</p>
+				`,
+		media: {
+			type: 'image',
+			url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1701378910/dailyboard__pl__personal_board.png',
+		},
+		icon: 'ph:users-three-duotone',
+		gradientRotation: 'rotate-[215deg]',
+		reversed: true,
+	},
+	{
+		name: `Your plans always at hand`,
+		description: `
+					<p>Your all commitments are visible in every contexts, so you can make new promises with confidence in your capacity.</p>
+				`,
+		media: {
+			type: 'image',
+			url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1701378910/dailyboard__pl__personal_board.png',
+		},
+		icon: 'ph:users-three-duotone',
+		gradientRotation: 'rotate-[215deg]',
+		reversed: false,
+	},
+];
+---
+
+<Container>
+	<div class="overflow-hidden relative isolate">
+		<div class="mx-auto max-w-7xl pb-12 px-6 lg:px-8">
+			<div
+				class="mx-auto max-w-3xl py-24 sm:py-32 lg:text-center"
+				data-animate="animate-fade-left"
+			>
+				<h2 class="text-base font-semibold leading-7 text-text-primary-weak">
+					Boards
+				</h2>
+				<p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">
+					Dedicated spaces without a scatter
+				</p>
+				<p class="mt-6 text-lg leading-8 text-text-weak">
+					You can finally reflect all contexts you work in - like teams, task forces,
+					guilds - and not scatter your work.
+				</p>
+			</div>
+		</div>
+	</div>
+	{features.map((feature) => <TextImageSection data={feature} />)}
+</Container>

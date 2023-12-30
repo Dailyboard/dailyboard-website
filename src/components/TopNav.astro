@@ -1,45 +1,93 @@
 ---
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
 import TryCta from './TryCta.astro';
+
+const { pathname } = Astro.url;
+const isHome = pathname === '/';
+
+const links: { href: string; text: string }[] = [
+	// {
+	// 	href: '/product',
+	// 	text: 'Product',
+	// },
+	// {
+	// 	href: '/pricing',
+	// 	text: 'Pricing',
+	// },
+	// {
+	// 	href: '/about',
+	// 	text: 'About',
+	// },
+	// {
+	// 	href: '/faq',
+	// 	text: 'FAQ',
+	// },
+	// {
+	// 	href: '/posts',
+	// 	text: 'Blog',
+	// },
+];
+
+function isLocalHref(href: string) {
+	return href.startsWith('#');
+}
+
+function getHref(href: string, isHome: boolean) {
+	return !isHome && isLocalHref(href) ? `/${href}` : href;
+}
 ---
 
-<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-	<div class="flex lg:flex-1">
-		<a
-			href="#top"
-			class="-m-1.5 p-1.5 flex items-center"
-			data-scroll
-			data-mt-duration="1000"
+<Astronav closeOnClick>
+	<div class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+		<div class="flex justify-between flex-1">
+			<a
+				href={isHome ? '#top' : '/'}
+				{...isHome && { 'data-scroll': true }}
+				{...isHome && { 'data-mt-duration': 1000 }}
+				class="-m-1.5 p-1.5 flex items-center"
+			>
+				<span class="sr-only">Dailyboard</span>
+				<img
+					class="h-6 sm:h-8 lg:h-10 w-auto"
+					src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard-logo.svg"
+					alt="Dailyboard logo"
+				/>
+				<span class="ml-4 text-xl font-extrabold sm:text-2xl lg:text-3xl"
+					>Dailyboard</span
+				>
+			</a>
+			<MenuIcon class="block lg:hidden" />
+		</div>
+		<MenuItems
+			class="hidden absolute top-[100%] bg-background flex-1 left-0 justify-start p-8 w-full lg:bg-transparent lg:p-0 lg:flex lg:static lg:justify-center"
 		>
-			<span class="sr-only">Dailyboard</span>
-			<img
-				class="h-6 sm:h-8 lg:h-10 w-auto"
-				src="https://dailyboard-io-website.s3.eu-central-1.amazonaws.com/dailyboard-logo.svg"
-				alt="Dailyboard logo"
-			/>
-			<span class="ml-4 text-xl font-extrabold sm:text-2xl lg:text-3xl">Dailyboard</span>
-		</a>
+			<ul class="flex flex-col gap-4 lg:flex-row lg:gap-8 lg:items-center">
+				{
+					links.map((link) => (
+						<li>
+							<a
+								href={getHref(link.href, isHome)}
+								class:list={[
+									'hover:text-text-primary-weak font-extrabold transition-colors',
+									{ 'text-text-primary-weak': pathname.includes(link.href) },
+								]}
+								{...(isHome &&
+									isLocalHref(link.href) && { 'data-scroll': true })}
+								{...(isHome &&
+									isLocalHref(link.href) && { 'data-mt-duration': 1000 })}
+							>
+								{link.text}
+							</a>
+						</li>
+					))
+				}
+				<li class="lg:hidden my-8">
+					<TryCta />
+				</li>
+			</ul>
+		</MenuItems>
+		<div class="hidden lg:flex flex-1 justify-end">
+			<TryCta />
+		</div>
 	</div>
-	<div class="hidden lg:flex items-center gap-8">
-		<a
-			href="#how-does-it-work"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">How does it work?</a
-		>
-		<a
-			href="#is-it-for-me"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">Is it for me?</a
-		>
-		<a
-			href="#pricing"
-			class="hover:text-text-primary-weak font-extrabold transition-colors"
-			data-scroll
-			data-mt-duration="1000">Pricing</a
-		>
-	</div>
-	<div class="flex flex-1 justify-end">
-		<TryCta />
-	</div>
-</nav>
+</Astronav>
