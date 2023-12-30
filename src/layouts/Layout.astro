@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import Footer from '../sections/Footer.astro';
+import FooterFull from '../sections/FooterFull.astro';
+import FooterSimple from '../sections/FooterSimple.astro';
 import TopNav from '../components/TopNav.astro';
 
 export interface Props {
@@ -59,6 +60,6 @@ const isDev = import.meta.env.DEV;
 		<main class="mt-24">
 			<slot />
 		</main>
-		<Footer />
+		<FooterSimple />
 	</body>
 </html>

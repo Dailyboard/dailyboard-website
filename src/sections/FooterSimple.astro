@@ -1,0 +1,48 @@
+---
+const foundingYear = 2023;
+const currentYear = new Date().getFullYear();
+
+const navigation = {
+	main: [
+		// { name: 'Product', href: '/product' },
+		// { name: 'Pricing', href: '/pricing' },
+		// { name: 'Blog', href: '/blog' },
+		{ name: 'Terms of use', href: '/documents/terms-of-use' },
+		{ name: 'Privacy policy', href: '/documents/privacy-policy' },
+		{
+			name: 'LinkedIn',
+			href: 'https://www.linkedin.com/company/dailyboard/',
+			newTab: true,
+		},
+	],
+	social: [],
+};
+---
+
+<footer>
+	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+		<nav
+			class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+			aria-label="Footer"
+		>
+			{
+				navigation.main.map((item) => (
+					<div class="pb-6">
+						<a
+							href={item.href}
+							class="text-sm leading-6 text-text hover:text-text-primary-weak"
+							target={item.newTab ? '_blank' : '_self'}
+						>
+							{item.name}
+						</a>
+					</div>
+				))
+			}
+		</nav>
+		<p class="mt-10 text-center text-xs leading-5 text-text-weak">
+			&copy; {foundingYear}
+			{currentYear !== foundingYear && `- ${currentYear}`} Dailyboard sp. z o. o.. All
+			rights reserved.
+		</p>
+	</div>
+</footer>

@@ -1,38 +1,31 @@
 ---
-import {
-	Astronav,
-	MenuItems,
-	MenuIcon,
-	Dropdown,
-	DropdownItems,
-	DropdownSubmenu,
-} from 'astro-navbar';
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
 import TryCta from './TryCta.astro';
 
 const { pathname } = Astro.url;
 const isHome = pathname === '/';
 
-const links = [
-	{
-		href: '/product',
-		text: 'Product',
-	},
-	{
-		href: '/pricing',
-		text: 'Pricing',
-	},
-	{
-		href: '/about',
-		text: 'About',
-	},
-	{
-		href: '/faq',
-		text: 'FAQ',
-	},
-	{
-		href: '/posts',
-		text: 'Blog',
-	},
+const links: { href: string; text: string }[] = [
+	// {
+	// 	href: '/product',
+	// 	text: 'Product',
+	// },
+	// {
+	// 	href: '/pricing',
+	// 	text: 'Pricing',
+	// },
+	// {
+	// 	href: '/about',
+	// 	text: 'About',
+	// },
+	// {
+	// 	href: '/faq',
+	// 	text: 'FAQ',
+	// },
+	// {
+	// 	href: '/posts',
+	// 	text: 'Blog',
+	// },
 ];
 
 function isLocalHref(href: string) {
