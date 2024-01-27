@@ -1,0 +1,15 @@
+---
+interface Props {
+	image: {
+		url: string;
+		alt?: string;
+	};
+}
+
+const { image } = Astro.props;
+---
+
+<figure class="flex flex-col items-center justify-center">
+	<img src={image.url} alt={image.alt ? image.alt : ''} class="max-width-2xl" />
+	<figcaption class="text-text-weak text-sm italic"><slot /></figcaption>
+</figure>

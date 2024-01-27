@@ -1,5 +1,5 @@
 ---
-import TextImageSection from '../components/SectionTextMedia.astro';
+import SectionTextMedia from '../components/SectionTextMedia.astro';
 
 const features = [
 	{
@@ -76,6 +76,6 @@ const features = [
 			</p>
 		</div>
 
-		{features.map((feature) => <TextImageSection data={feature} />)}
+		{features.map((feature) => <SectionTextMedia data={feature} />)}
 	</div>
 </div>
