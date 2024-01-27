@@ -1,14 +1,23 @@
 ---
+import PageHeader from '../components/PageHeader.astro';
 import Layout from '../layouts/Layout.astro';
-import Container from '../components/Container.astro';
+import ContentContainer from '../ui/ContentContainer.astro';
 
 const data = {
-	title: 'Dailyboard - A daily planner for committed teams ✅',
+	title: 'FAQ - Dailyboard - A daily planner for committed teams ✅',
 	description:
 		'Dailyboard is a lightweight tool for organizing your day as a team. Rediscover teamwork, share the flow and create more value together!',
 };
 ---
 
 <Layout {...data}>
-	<Container>FAQ</Container>
+	<ContentContainer>
+		<PageHeader>
+			<span slot="eyebrow">FAQ</span>
+			<span slot="title">Frequently asked questions</span>
+
+			 Adopting a new tool is a challenge, we know it. If you're in doubt, check out the most
+			frequent questions we're asked below.
+		</PageHeader>
+	</ContentContainer>
 </Layout>

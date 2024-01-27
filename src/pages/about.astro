@@ -1,14 +1,178 @@
 ---
+import ImageContainer from '../components/ImageContainer.astro';
+import PageHeader from '../components/PageHeader.astro';
 import Layout from '../layouts/Layout.astro';
+import HomepageTestimonials from '../sections/HomepageTestimonials.astro';
+import PricingSection from '../sections/PricingSection.astro';
 import ContentContainer from '../ui/ContentContainer.astro';
 
 const data = {
-	title: 'Dailyboard - A daily planner for committed teams ✅',
+	title: 'About - Dailyboard - A daily planner for committed teams ✅',
 	description:
 		'Dailyboard is a lightweight tool for organizing your day as a team. Rediscover teamwork, share the flow and create more value together!',
 };
 ---
 
 <Layout {...data}>
-	<ContentContainer>About</ContentContainer>
+	<ContentContainer>
+		<PageHeader>
+			<span slot="eyebrow">About</span>
+			<span slot="title">Why Dailyboard?</span>
+			 Our story starts with a simple realisation - what separates great teams from
+			groups of individuals is a shared plan that maximises their daily output.
+		</PageHeader>
+		<div class="prose prose-invert">
+			<h2>The problem we solve</h2>
+			<p>
+				We worked in and with multiple teams in the span of our careers. One thing they
+				all have in common is that every day they somehow need to decide on the best
+				use of the next 24 hours.
+			</p>
+			<p>
+				As teams and companies grow, the dependencies between people become more and
+				more common. At some point it's impossible to wrap your head around everything
+				you need to take account for in your day plan.
+			</p>
+			<p>
+				Most common scenario is that teams pretend to plan their together, but they
+				simply report on their individual goals. It makes daily planning meetings fell
+				like they're useless (and in this form - they are) and unexpected roadblocks
+				and scheduling conflicts during the day.
+			</p>
+			<p>
+				People waste time switching contexts because noone can review or feedback their
+				work and plans blow up because of untracked commitments outside the team.
+			</p>
+			<p>
+				Leaders have hard time supporting the team to be more effective, since their
+				commitments are not transparent and it's hard to see where the problems really
+				are. And the leaders themselves struggle to plan their day, usually juggling
+				between commitments inside and outside their teams.
+			</p>
+
+			<h2>The story behind the app</h2>
+			<p>
+				As we tried to improve our team and the teams we worked with, we started using
+				a simple tool to visually jot down all promises that we made at our daily
+				planning meetings (called daily stand-ups in the agile development world).
+			</p>
+			<p>
+				The first iteration was a simple whiteboard, divided into days. We simply wrote
+				down our commitments - "get X to status Y".
+			</p>
+
+			<ImageContainer
+				image={{
+					url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1706388185/about__early_dailyboard.jpg',
+					alt: 'Early prototype of a daily board',
+				}}
+			>
+				One of our first daily boards
+			</ImageContainer>
+
+			<p>
+				We naturally started to improve this experience. We took notes of who made a
+				given commitment. We started to break down processes that required multiple
+				steps and people to be involved with separate commitments.
+			</p>
+			<p>
+				With the era of remote work, we moved our daily boards to online whiteboards,
+				which gave us even more flexibility.
+			</p>
+
+			<ImageContainer
+				image={{
+					url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1706388561/about__online_dailyboard.png',
+					alt: 'One of our online daily boards',
+				}}
+			>
+				One of our online daily boards
+			</ImageContainer>
+
+			<p>
+				Having experience the harmony of working as a true team, we always believed
+				there's something more to this idea. Something we can share and scale with a
+				dedicated app that would automate the tedious process of copypasting week
+				templates. And what's even more important - an app that would sync our
+				commitments from different teams/contexts.
+			</p>
+
+			<p>That's how an idea for the Dailyboard app came to be.</p>
+
+			<ImageContainer
+				image={{
+					url: 'https://res.cloudinary.com/dl5xtsolh/image/upload/v1698556917/dailyboard_app_screenshot_board.png',
+					alt: 'The Dailyboard app',
+				}}
+			>
+				The Dailyboard app
+			</ImageContainer>
+
+			<h2>Why does it work?</h2>
+
+			<p>
+				There are a few key factors why we believe this daily planning technique
+				improves teamwork.
+				<ol>
+					<li>
+						<strong>Focus on the team.</strong> With everyone managing their own
+						"to do lists" in isolation, it's easier to drift away from the team's
+						goals.
+					</li>
+					<li>
+						<strong>Transparency.</strong> Everyone's commitments are visible and
+						it gives everyone the extra push to focus on what's important for the
+						team.
+					</li>
+					<li>
+						<strong>Accountability.</strong> If you commit to bring X to status Y,
+						it's easy to verify if it's actually happened. It brings the truth to
+						the surface and facilitates more productive conversations.
+					</li>
+					<li>
+						<strong>Spotting roadblocks.</strong> When your team doesn't write down
+						commitments in a shared space, it's easy to overcommit or miss the fact
+						that more people are actually needed to get something done.
+					</li>
+				</ol>
+			</p>
+
+			<h2>How can you use it in your team?</h2>
+
+			<p>
+				The most important thing is - you can start using Dailyboard right away!
+				There's not much setup needed - create an organization, invite people and
+				create your first shared boards. Everyone can start tracking their commitments
+				right away!
+			</p>
+
+			<p>
+				There are, however, some things you can do to ensure your team's success and
+				improve your experience.
+			</p>
+
+			<p>
+				<ol>
+					<li>
+						<strong>The more, the merrier.</strong> Dailyboard is primarly focused
+						on a team's experience. Of course, you can test it on your own, but
+						it'll be hard to harness the full potential of the app.
+					</li>
+					<li>
+						<strong>Make it a habit.</strong> Start your daily planning meetings by
+						opening Dailyboard. Use it as a team, discuss the plan and make sure
+						all commitments are written down.
+					</li>
+					<li>
+						<strong>Use your personal board to focus.</strong> It's great to plan
+						your day with everyone you work with, but when you start deviverling
+						your commitments, it's time to focus. Use your personal board to cut
+						the noise and kick start your day!
+					</li>
+				</ol>
+			</p>
+		</div>
+	</ContentContainer>
+	<HomepageTestimonials />
+	<PricingSection />
 </Layout>
