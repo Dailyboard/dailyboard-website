@@ -18,10 +18,10 @@ const links: { href: string; text: string }[] = [
 		href: '/about',
 		text: 'About',
 	},
-	// {
-	// 	href: '/faq',
-	// 	text: 'FAQ',
-	// },
+	{
+		href: 'https://github.com/Dailyboard/Dailyboard/releases',
+		text: 'Change log',
+	},
 	// {
 	// 	href: '/posts',
 	// 	text: 'Blog',
@@ -30,6 +30,10 @@ const links: { href: string; text: string }[] = [
 
 function isLocalHref(href: string) {
 	return href.startsWith('#');
+}
+
+function isExternalHref(href: string) {
+	return href.startsWith('http');
 }
 
 function getHref(href: string, isHome: boolean) {
@@ -67,6 +71,7 @@ function getHref(href: string, isHome: boolean) {
 						<li>
 							<a
 								href={getHref(link.href, isHome)}
+								target={isExternalHref(link.href) ? '_blank' : '_self'}
 								class:list={[
 									'hover:text-text-primary-weak font-extrabold transition-colors',
 									{ 'text-text-primary-weak': pathname.includes(link.href) },
