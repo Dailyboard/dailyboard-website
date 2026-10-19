@@ -5,7 +5,7 @@ description: Prepare Dailyboard release roundups from merged PRs, with a concise
 
 # Dailyboard updates
 
-Produce two outputs from one evidence set: a Polish internal summary for Dailyboard.io #it and an English public article in dailyboard-website. Follow the current user's scope and publishing authority. The agreed series is **Dailyboard, Forward — <edition date>** (proposed in the first review edition).
+Produce two outputs from one evidence set: a Polish internal summary for the current review thread and an English public article in dailyboard-website. Follow the current user's scope and publishing authority. The agreed series is **Dailyboard, Forward — <edition date>** (proposed in the first review edition).
 
 ## Resume and establish the interval
 
@@ -31,7 +31,16 @@ Use merged Dailyboard product PRs as the primary record; page through all result
 
 ## Internal report
 
-Give #it a short one-sentence item per meaningful work group, with related Jira and PR links. Include technical work, documentation and design under clearly labeled groups, without presenting proposals as shipped features. Link the article PR and preview. Check the live channel ID/name and recent history before posting. The user's explicit October 19 request authorizes this recurring report to Dailyboard.io #it (`C059D1DJYP8`) using Kordian's dedicated app identity; it does not authorize unrelated messages. Follow current turn instructions if they narrow delivery. Record the accepted message timestamp/permalink in edition notes. Send a single report; split only if necessary for Slack limits and record every part.
+Current delivery override (Kuba, October 19, 2026): the first #it report was deleted by Kuba and publication is paused. Return summaries in Slack thread `1792422327.074229` through the bridge's final reply. Do not independently send to #it or enable the schedule until instructed. Preserve the deleted message as historical evidence, not an active report or a completed interval.
+
+Use Slack mrkdwn and this structure:
+- Title: `*IT Review — <start date>–<end date>*`.
+- A short introduction stating the reporting period and scope.
+- One flat bullet list per initiative, using the actual Jira epic name; tasks without an epic go under `*Pozostałe*`. Include APP tasks closed during the interval and currently In Progress at the cutoff. Fetch current Jira status and epic membership; do not infer epic groups from PR themes. Label each item's status and give a concise one-sentence description with Jira and related PR links where available.
+- Include closed tasks without PR coverage for completeness, but identify them as cleanup/duplicates/abandoned scope where confirmed, or as lacking implementation evidence. Never imply they shipped. In Progress tasks are ongoing work, not released features. Public article selection remains based on PR/deployment evidence.
+- End by stating that the user update is prepared as a blog draft, with the existing article PR and preview links.
+
+Resume the existing report draft. Check history before delivery and record the destination and delivery state without treating a deleted report as the next edition's cutoff. A future change of destination requires current user authorization; the original #it request is superseded by this review pause.
 
 ## Article, verification and review
 

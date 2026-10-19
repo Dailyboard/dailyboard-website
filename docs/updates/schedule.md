@@ -1,6 +1,6 @@
 # Fortnightly Dailyboard updates
 
-Status: **not activated**. The first manual run created website PR #6, a working public preview and one accepted #it report. The current runtime has no schedule-management tool and Computer Use rejected access to the Codex application. Do not interpret this document as an installed schedule or use a direct application-database edit to bypass that restriction.
+Status: **not activated**. The first manual run created website PR #6, a working public preview and one accepted #it report. Kuba subsequently deleted that report and paused publication. Do not activate this schedule or resume #it delivery until instructed; current summaries belong in the source review thread through the bridge. The current runtime has no schedule-management tool and Computer Use rejected access to the Codex application. Do not interpret this document as an installed schedule or use a direct application-database edit to bypass that restriction.
 
 ## Proposed schedule
 
@@ -14,7 +14,7 @@ Status: **not activated**. The first manual run created website PR #6, a working
 
 Run the dailyboard-updates skill in Dailyboard/dailyboard-website. Locate its reviewed checkout and read `.agents/skills/dailyboard-updates/SKILL.md`, `docs/updates/editions.json`, existing edition notes and open PRs first. Until PR #6 is merged, its review checkout is `/Users/kordian-codex/Code/dailyboard/dailyboard-website-update-2026-10-19`; do not create a second first edition.
 
-Gather merged product PRs since the appropriate recorded cutoff and pending eligible changes, cross-check Jira, and distinguish shipped features from designs, internal work and the iOS prototype. Prepare one concise Polish internal report with related tickets and PR links for Dailyboard.io #it (C059D1DJYP8), using Kordian's dedicated app identity. This destination is explicitly authorized by Kuba in Slack thread 1792422327.074229; check for previous delivery before sending and record Slack acceptance.
+Gather merged product PRs since the appropriate recorded cutoff and pending eligible changes, cross-check Jira, and distinguish shipped features from designs, internal work and the iOS prototype. Prepare the Polish internal report in the skill's IT Review format: date range, short introduction, APP tasks closed during the interval and currently In Progress grouped by actual Jira epic, with Pozostałe for no epic, then article PR and preview. Closed tasks without PR evidence are not shipped features. Current delivery is the final bridge reply in Slack thread 1792422327.074229, not an independent message to #it. The original #it authorization has been superseded by Kuba's review pause.
 
 Prepare or update the English public article in a website PR, with linked agenda, highlights, real demo-data screenshots, performance/reliability coverage and brief fixes. Follow the one-edition Calendar exception and all recorded editorial decisions. Build, review desktop/mobile rendering, inspect the final diff, provide a verified public static-site preview and hand off the PR for review. Do not merge or publish without approval. Keep internal-delivery and public-publication checkpoints separate. Resume existing drafts and preserve pending changes rather than duplicating output. Report concrete blockers and never claim a schedule, message or publication succeeded without evidence.
 
