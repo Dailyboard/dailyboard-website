@@ -102,16 +102,25 @@
       "publicationConfirmedAt": null,
       "internalReport": {
         "channel": "C059D1DJYP8",
-        "ts": "1792426600.660719",
-        "permalink": "https://dailyboardio.slack.com/archives/C059D1DJYP8/p1792426600660719",
-        "status": "deleted_by_user",
-        "note": "Kuba reported deletion; publication paused. Revise and return IT Review in the source thread, not #it."
+        "ts": "1792435816.368789",
+        "permalink": "https://dailyboardio.slack.com/archives/C059D1DJYP8/p1792435816368789",
+        "status": "published",
+        "note": "Approved text from source thread messages 1792435602.558109, 1792435602.607409 and 1792435602.646249, explicitly authorized by Kuba in 1792435735.652339."
       },
       "pr": "https://github.com/Dailyboard/dailyboard-website/pull/6",
-      "preview": "https://nonmechanical-landless-andria.ngrok-free.dev/posts/dailyboard-forward-2026-10-19/"
+      "preview": "https://nonmechanical-landless-andria.ngrok-free.dev/posts/dailyboard-forward-2026-10-19/",
+      "internalReportHistory": [
+        {
+          "channel": "C059D1DJYP8",
+          "ts": "1792426600.660719",
+          "permalink": "https://dailyboardio.slack.com/archives/C059D1DJYP8/p1792426600660719",
+          "status": "deleted_by_user",
+          "note": "Kuba reported deletion; publication paused. Revise and return IT Review in the source thread, not #it."
+        }
+      ]
     }
   ],
-  "internallyReportedThrough": null,
+  "internallyReportedThrough": "2026-10-19T15:46:27Z",
   "schedule": {
     "status": "not_activated",
     "timezone": "Europe/Warsaw",
@@ -123,6 +132,7 @@
     "mode": "review_thread_via_bridge",
     "channel": "D0C6G3YRA4C",
     "thread": "1792422327.074229",
-    "itPublicationPaused": true
+    "itPublicationPaused": true,
+    "note": "This edition explicitly authorized and delivered to #it; future automatic sends remain paused."
   }
 }
