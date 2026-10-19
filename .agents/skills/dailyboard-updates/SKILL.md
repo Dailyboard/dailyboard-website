@@ -11,7 +11,7 @@ Produce two outputs from one evidence set: a Polish internal summary for the cur
 
 Read `docs/updates/editions.json` and existing edition notes, open website PRs and the relevant Slack thread before creating anything. Resume an existing draft; never create duplicate editions, PRs, previews, or Slack posts. Treat stored message IDs as delivery evidence, not proof someone read the message. On an uncertain send, check the destination before retrying.
 
-First edition starts July 1, 2026. Freeze an exact source cutoff for each run. Later public editions cover changes since the last **published** edition, retaining unpublished eligible work. Keep an independent internal-report cutoff: an internal report may succeed while the article remains in review. Draft creation or PR merge alone must not advance the public publication checkpoint; verify the live article before recording publication. An existing unmerged edition should be updated rather than duplicated. Carry forward relevant merged-but-not-deployed work until release, and identify it as pending internally.
+First edition starts August 15, 2026. Freeze an exact source cutoff for each run. Later public editions cover changes since the last **published** edition, retaining unpublished eligible work. Keep an independent internal-report cutoff: an internal report may succeed while the article remains in review. Draft creation or PR merge alone must not advance the public publication checkpoint; verify the live article before recording publication. An existing unmerged edition should be updated rather than duplicated. Carry forward relevant merged-but-not-deployed work until release, and identify it as pending internally.
 
 ## Gather evidence
 

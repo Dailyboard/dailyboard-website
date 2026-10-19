@@ -1,17 +1,5 @@
 [
   {
-    "number": 19,
-    "title": "APP-163 | Add spec-driven development harness",
-    "mergedAt": "2026-08-14T11:57:58Z",
-    "url": "https://github.com/Dailyboard/dailyboard-monorepo/pull/19"
-  },
-  {
-    "number": 20,
-    "title": "APP-163 | Define Dailyboard mobile PRD",
-    "mergedAt": "2026-08-14T11:58:12Z",
-    "url": "https://github.com/Dailyboard/dailyboard-monorepo/pull/20"
-  },
-  {
     "number": 21,
     "title": "APP-164 | Implement the mobile board view",
     "mergedAt": "2026-08-19T18:23:06Z",
