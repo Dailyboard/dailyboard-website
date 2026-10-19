@@ -101,7 +101,22 @@
       "oneOffPublicExclusions": [
         "Google Calendar availability expansion (#105): Kuba requested omission for this edition only."
       ],
-      "publicationConfirmedAt": null
+      "publicationConfirmedAt": null,
+      "internalReport": {
+        "channel": "C059D1DJYP8",
+        "ts": "1792426600.660719",
+        "permalink": "https://dailyboardio.slack.com/archives/C059D1DJYP8/p1792426600660719"
+      },
+      "pr": "https://github.com/Dailyboard/dailyboard-website/pull/6",
+      "preview": "https://nonmechanical-landless-andria.ngrok-free.dev/posts/dailyboard-forward-2026-10-19/"
     }
-  ]
+  ],
+  "internallyReportedThrough": "2026-10-19T15:46:27Z",
+  "schedule": {
+    "status": "not_activated",
+    "timezone": "Europe/Warsaw",
+    "proposedFirstRun": "2026-11-02T20:00:00+01:00",
+    "intervalWeeks": 2,
+    "instructions": "docs/updates/schedule.md"
+  }
 }

@@ -43,5 +43,6 @@ Pierwsza próba cyklicznego podsumowania. Zestawienie scalonych PR-ów; dokument
 • Dodaliśmy obsługę linków w prototypie, informację o podłączaniu kalendarza na komputerze i naprawę loggera podczas startu. <https://dailyboardio.atlassian.net/browse/APP-222|APP-222> · <https://github.com/Dailyboard/dailyboard-monorepo/pull/106|PR #106> · <https://github.com/Dailyboard/dailyboard-monorepo/pull/108|PR #108>
 • APP-255 | Share an exact origin allowlist across HTTP and Socket.IO — <https://github.com/Dailyboard/dailyboard-monorepo/pull/114|PR #114>.
 
-Artykuł i podgląd: linki zostaną dodane przed wysłaniem.
+<https://github.com/Dailyboard/dailyboard-website/pull/6|PR z artykułem i skillem> · <https://nonmechanical-landless-andria.ngrok-free.dev/posts/dailyboard-forward-2026-10-19/|Podgląd artykułu>
+<@U043ZF4FRMJ> — do oceny treść, nazwa serii i screenshoty; artykuł nie jest opublikowany.
 Przygotował Kordian Debugowski (AI).
