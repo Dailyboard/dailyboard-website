@@ -1,0 +1,60 @@
+---
+name: dailyboard-updates
+description: Prepare Dailyboard release roundups from merged PRs, with a concise internal Slack report and a user-facing blog article, screenshots, review PR and live preview. Use for the recurring fortnightly update or a manual edition, not deployment or generic Jira status reports.
+---
+
+# Dailyboard updates
+
+Produce two outputs from one evidence set: a Polish internal summary for the current review thread and an English public article in dailyboard-website. Follow the current user's scope and publishing authority. The agreed series is **Dailyboard, Forward — <edition date>**.
+
+## Resume and establish the interval
+
+Keep operational state outside the website repository in `~/.local/share/dailyboard-updates/`: `editions.json`, source inventories, review notes, internal Slack drafts and scheduling notes. Read that ledger and the relevant edition notes, open website PRs and the source Slack thread before creating anything. This is workstation-local state, not a backup or an active schedule. If unavailable on another workstation, reconstruct checkpoints from verified published articles, existing PRs and Slack delivery history; do not silently restart the interval. Resume an existing draft; never create duplicate editions, PRs, previews, or Slack posts. Treat stored message IDs as delivery evidence, not proof someone read the message. On an uncertain send, check the destination before retrying.
+
+First edition starts August 15, 2026. Freeze an exact source cutoff for each run. Later public editions cover changes since the last **published** edition, retaining unpublished eligible work. Keep an independent internal-report cutoff: an internal report may succeed while the article remains in review. Draft creation or PR merge alone must not advance the public publication checkpoint; verify the live article before recording publication. An existing unmerged edition should be updated rather than duplicated. Carry forward relevant merged-but-not-deployed work until release, and identify it as pending internally.
+
+## Gather evidence
+
+Use merged Dailyboard product PRs as the primary record; page through all results and inspect descriptions, follow-up comments and relevant implementation. Group several PRs for one feature into one item, while preserving all source links. Jira supplies context and a cross-check. Kuba's October 19 clarification: closed tickets without PR coverage may be cleanup, duplicates or abandoned scope; do not present them as shipped work. Do not invent a Jira key for a PR that has none. Distinguish implementation, documentation/design, merged, deployed and verified. Check the actual mobile prototype/distribution state; mobile web is not an App Store launch.
+
+## Editorial decisions
+
+- Lead with user outcomes, explain where a feature is and how to use it.
+- Include a short agenda of one-sentence bullets; link highlights to their sections. A small change may be completely described in its bullet.
+- Highlights have useful detail and real screenshots showing the released interaction on fictional/demo data. Do not substitute proposed designs or generated screenshots for the application. Record capture environment and limitations. Avoid forcing a screenshot for an invisible backend/process improvement; illustrate a relevant user flow when useful.
+- Capture screenshots without the automation cursor or overlays; inspect the actual saved assets. Choose views that best explain the feature; the first edition’s Overdue highlight uses desktop only, per Kuba’s October 20 feedback. For now, omit GIFs: Kuba rejected their visual quality on October 20, 2026. Mobile board screenshots should show a shared board with multiple fictional participants and realistic commitments, including plenty of completed work alongside ongoing tasks, rather than only a details panel. Populate desktop boards similarly.
+- Export screenshots directly from Chrome DevTools at DPR 3 (at least 2), retaining the intended CSS viewport. Use the original downloaded PNG, not the automation tool’s resized/compressed observation image. Verify actual pixel dimensions against displayed CSS size, inspect text at Retina density, and remove only the automation overlay before export (never alter product UI). Repaint after removing the overlay and inspect the saved file; hiding or moving the pointer alone may leave it in the export. Constrain image display widths; never upscale a 1× screenshot.
+- Performance improvements always deserve consideration. Describe the concrete work and intended experience without unsupported speed claims or percentages.
+- Reliability work matters even when individual PRs are technical. Explain the collective effort to reduce recurring errors and detect/respond to new problems; do not claim zero bugs or instant guaranteed fixes. Include a concise fixes section, grouping low-level items as other bug fixes and improvements where appropriate.
+- Frequently requested features can be highlights even if technically small. Password recovery is such a feature; Kuba confirmed it works in production on October 19, 2026.
+- Omit the Google Calendar availability expansion from the **first edition only**, per Kuba. This is not a general rule against communicating availability changes.
+- Explain material consequences, such as permanent deletion of integration-owned imports when removing a member.
+- Explicitly describe phone support as use in a mobile browser. A native-app teaser is allowed for the first edition, as requested by Kuba; do not imply native availability or invent a release date. Recheck the product state for later editions.
+- Keep PR/Jira implementation links in internal evidence, not in customer-facing copy by default.
+
+## Internal report
+
+Prepare the full IT Review in the source thread for review before channel publication. When working through the Slack bridge, return it in the final reply rather than sending a separate message. Publish to a channel only with explicit current authorization and after checking for an existing delivery. Consult the external ledger for edition-specific delivery state: a deleted earlier draft is historical evidence, not proof the revised report was sent.
+
+Use Slack mrkdwn and this structure:
+- Title: `*IT Review — <start date>–<end date>*`.
+- A short introduction stating the reporting period and scope.
+- One flat bullet list per initiative, using the actual Jira epic name; tasks without an epic go under `*Pozostałe*`. Include APP tasks closed during the interval and currently In Progress at the cutoff. Fetch current Jira status and epic membership; do not infer epic groups from PR themes. Label each item's status and give a concise one-sentence description with Jira and related PR links where available.
+- Exclude tasks closed as cleanup, duplicates or abandoned scope from IT Review (Kuba approved this filtered format on October 19). Closed tasks without PR evidence are presumed cleanup per his clarification; retain them only in source audit notes. Never imply they shipped. In Progress tasks are ongoing work, not released features. Public article selection remains based on PR/deployment evidence.
+- End by stating that the user update is prepared as a blog draft, with the existing article PR and preview links.
+
+Resume the existing report draft. Check history before delivery and record the destination and delivery state without treating a deleted report as the next edition's cutoff. Approval for one edition does not enable recurring sends.
+
+## Article, verification and review
+
+Limit the website PR to the article, its published media, necessary blog-template changes and this reusable skill. Keep source inventories, internal messages, edition checkpoints, review history and scheduling state in the external state directory; never add them to the website PR.
+
+Reuse `src/content/posts/*.mdx`, the existing BlogPost layout and content schema. Dailyboard, Forward uses no cover image: omit frontmatter `image`, set `category: "Product update"`, and let BlogPost render the accent line, category and publication date above the title. Keep instructional screenshots in the body. Assets go in `public/images/updates/<edition>/`. Build with the repository's working lockfile (the first run found Yarn lockfile usable and npm lockfile stale). Do not change unrelated dependencies or layout. Check desktop and phone rendering, agenda anchors, image loading/alt text and copy against evidence. Inspect final diff before creating a review PR. Do not merge/publish without the user's approval.
+
+Serve only the built public site for preview, never the repository or private source notes. Keep the preview alive independently of a terminal call and verify its public URL after launch. Reuse an existing task-specific preview; don't stop unrelated tunnels. A local preview still depends on the host staying available.
+
+## Recurrence
+
+Kuba requested every two weeks on Monday evening, Europe/Warsaw. Run the first complete procedure manually before enabling the recurring schedule. Use an explicit local evening time and first-run date; inspect existing schedules before creating one. Prefer the supported scheduler and verify the displayed next run. Do not treat a config file as proof of an active schedule or invent successful scheduled-run evidence.
+
+Source: Kuba's Slack thread `1792422327.074229`, October 19, 2026, including audio message `1792425981.459909` requesting the two outputs, review preview and fortnightly cadence. Revisit editorial rules when Kuba or Adam provides new feedback.

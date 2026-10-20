@@ -1,21 +1,30 @@
 ---
 import ContentContainer from '../ui/ContentContainer.astro';
+import FormattedDate from '../ui/FormattedDate.astro';
 import Layout from './Layout.astro';
 
 interface Props {
 	title: string;
 	description: string;
-	image: { src: string; alt: string };
+	pubDate: Date;
+	category: string;
+	image?: { src: string; alt: string };
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, pubDate, category } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
 	<ContentContainer>
 		<article class="pt-12">
-			<img {...image} class="rounded-lg object-cover aspect-video" />
-			<h1 class="text-4xl font-extrabold py-12">{title}</h1>
+			{image && <img {...image} class="rounded-lg object-cover aspect-video mb-12" />}
+			<header class="pb-10">
+				<div aria-hidden="true" class="h-1 w-9 rounded-full bg-text-primary-weak mb-5"></div>
+				<p class="text-text-primary-weak text-xs sm:text-sm font-medium uppercase tracking-widest flex flex-wrap items-baseline gap-x-2 gap-y-1">
+					<span>{category}</span><span aria-hidden="true">·</span><FormattedDate date={pubDate} month="long" />
+				</p>
+				<h1 class="text-4xl font-extrabold mt-6">{title}</h1>
+			</header>
 			<div class="prose prose-invert">
 				<slot />
 			</div>
