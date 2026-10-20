@@ -5,11 +5,11 @@ description: Prepare Dailyboard release roundups from merged PRs, with a concise
 
 # Dailyboard updates
 
-Produce two outputs from one evidence set: a Polish internal summary for the current review thread and an English public article in dailyboard-website. Follow the current user's scope and publishing authority. The agreed series is **Dailyboard, Forward — <edition date>** (proposed in the first review edition).
+Produce two outputs from one evidence set: a Polish internal summary for the current review thread and an English public article in dailyboard-website. Follow the current user's scope and publishing authority. The agreed series is **Dailyboard, Forward — <edition date>**.
 
 ## Resume and establish the interval
 
-Read `docs/updates/editions.json` and existing edition notes, open website PRs and the relevant Slack thread before creating anything. Resume an existing draft; never create duplicate editions, PRs, previews, or Slack posts. Treat stored message IDs as delivery evidence, not proof someone read the message. On an uncertain send, check the destination before retrying.
+Keep operational state outside the website repository in `~/.local/share/dailyboard-updates/`: `editions.json`, source inventories, review notes, internal Slack drafts and scheduling notes. Read that ledger and the relevant edition notes, open website PRs and the source Slack thread before creating anything. This is workstation-local state, not a backup or an active schedule. If unavailable on another workstation, reconstruct checkpoints from verified published articles, existing PRs and Slack delivery history; do not silently restart the interval. Resume an existing draft; never create duplicate editions, PRs, previews, or Slack posts. Treat stored message IDs as delivery evidence, not proof someone read the message. On an uncertain send, check the destination before retrying.
 
 First edition starts August 15, 2026. Freeze an exact source cutoff for each run. Later public editions cover changes since the last **published** edition, retaining unpublished eligible work. Keep an independent internal-report cutoff: an internal report may succeed while the article remains in review. Draft creation or PR merge alone must not advance the public publication checkpoint; verify the live article before recording publication. An existing unmerged edition should be updated rather than duplicated. Carry forward relevant merged-but-not-deployed work until release, and identify it as pending internally.
 
@@ -29,11 +29,12 @@ Use merged Dailyboard product PRs as the primary record; page through all result
 - Frequently requested features can be highlights even if technically small. Password recovery is such a feature; Kuba confirmed it works in production on October 19, 2026.
 - Omit the Google Calendar availability expansion from the **first edition only**, per Kuba. This is not a general rule against communicating availability changes.
 - Explain material consequences, such as permanent deletion of integration-owned imports when removing a member.
+- Explicitly describe phone support as use in a mobile browser. A native-app teaser is allowed for the first edition, as requested by Kuba; do not imply native availability or invent a release date. Recheck the product state for later editions.
 - Keep PR/Jira implementation links in internal evidence, not in customer-facing copy by default.
 
 ## Internal report
 
-Current delivery override (Kuba, October 19, 2026): the first #it report was deleted by Kuba and publication is paused. Return summaries in Slack thread `1792422327.074229` through the bridge's final reply. Do not independently send to #it or enable the schedule until instructed. Preserve the deleted message as historical evidence, not an active report or a completed interval.
+Prepare the full IT Review in the source thread for review before channel publication. When working through the Slack bridge, return it in the final reply rather than sending a separate message. Publish to a channel only with explicit current authorization and after checking for an existing delivery. Consult the external ledger for edition-specific delivery state: a deleted earlier draft is historical evidence, not proof the revised report was sent.
 
 Use Slack mrkdwn and this structure:
 - Title: `*IT Review — <start date>–<end date>*`.
@@ -42,9 +43,11 @@ Use Slack mrkdwn and this structure:
 - Exclude tasks closed as cleanup, duplicates or abandoned scope from IT Review (Kuba approved this filtered format on October 19). Closed tasks without PR evidence are presumed cleanup per his clarification; retain them only in source audit notes. Never imply they shipped. In Progress tasks are ongoing work, not released features. Public article selection remains based on PR/deployment evidence.
 - End by stating that the user update is prepared as a blog draft, with the existing article PR and preview links.
 
-Resume the existing report draft. Check history before delivery and record the destination and delivery state without treating a deleted report as the next edition's cutoff. A future change of destination requires current user authorization; the original #it request is superseded by this review pause.
+Resume the existing report draft. Check history before delivery and record the destination and delivery state without treating a deleted report as the next edition's cutoff. Approval for one edition does not enable recurring sends.
 
 ## Article, verification and review
+
+Limit the website PR to the article, its published media, necessary blog-template changes and this reusable skill. Keep source inventories, internal messages, edition checkpoints, review history and scheduling state in the external state directory; never add them to the website PR.
 
 Reuse `src/content/posts/*.mdx`, the existing BlogPost layout and content schema. Dailyboard, Forward uses no cover image: omit frontmatter `image`, set `category: "Product update"`, and let BlogPost render the accent line, category and publication date above the title. Keep instructional screenshots in the body. Assets go in `public/images/updates/<edition>/`. Build with the repository's working lockfile (the first run found Yarn lockfile usable and npm lockfile stale). Do not change unrelated dependencies or layout. Check desktop and phone rendering, agenda anchors, image loading/alt text and copy against evidence. Inspect final diff before creating a review PR. Do not merge/publish without the user's approval.
 
