@@ -19,11 +19,11 @@ const allPosts = await getCollection('posts');
 				.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 				.map((post) => (
 					<a href={`/posts/${post.slug}`}>
-						<li class="transition-transform group rounded-lg flex flex-col bg-background-weak min-h-[200px] sm:grid sm:grid-cols-[1fr_2fr] sm:hover:scale-[1.015]">
-							<img
+						<li class:list={["transition-transform group rounded-lg flex flex-col bg-background-weak min-h-[200px] sm:hover:scale-[1.015]", post.data.image && "sm:grid sm:grid-cols-[1fr_2fr]"]}>
+							{post.data.image && <img
 								{...post.data.image}
 								class="rounded-t-lg aspect-video object-cover self-stretch sm:rounded-l-lg sm:rounded-tr-none"
-							/>
+							/>}
 							<div class="p-4 flex flex-col gap-4">
 								<div class="text-text-weak uppercase text-xs font-extrabold">
 									<FormattedDate date={post.data.pubDate} />

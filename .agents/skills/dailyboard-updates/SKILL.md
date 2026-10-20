@@ -45,7 +45,7 @@ Resume the existing report draft. Check history before delivery and record the d
 
 ## Article, verification and review
 
-Reuse `src/content/posts/*.mdx`, the existing BlogPost layout and content schema. Assets go in `public/images/updates/<edition>/`. Build with the repository's working lockfile (the first run found Yarn lockfile usable and npm lockfile stale). Do not change unrelated dependencies or layout. Check desktop and phone rendering, agenda anchors, image loading/alt text and copy against evidence. Inspect final diff before creating a review PR. Do not merge/publish without the user's approval.
+Reuse `src/content/posts/*.mdx`, the existing BlogPost layout and content schema. Dailyboard, Forward uses no cover image: omit frontmatter `image`, set `category: "Product update"`, and let BlogPost render the accent line, category and publication date above the title. Keep instructional screenshots/GIFs in the body. Assets go in `public/images/updates/<edition>/`. Build with the repository's working lockfile (the first run found Yarn lockfile usable and npm lockfile stale). Do not change unrelated dependencies or layout. Check desktop and phone rendering, agenda anchors, image loading/alt text and copy against evidence. Inspect final diff before creating a review PR. Do not merge/publish without the user's approval.
 
 Serve only the built public site for preview, never the repository or private source notes. Keep the preview alive independently of a terminal call and verify its public URL after launch. Reuse an existing task-specific preview; don't stop unrelated tunnels. A local preview still depends on the host staying available.
 

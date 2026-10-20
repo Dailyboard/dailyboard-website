@@ -20,11 +20,12 @@ const postsCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		pubDate: z.date(),
+		category: z.string().default('Article'),
 		description: z.string(),
 		image: z.object({
 			src: z.string(),
 			alt: z.string(),
-		}),
+		}).optional(),
 	}),
 });
 
