@@ -4,16 +4,15 @@ import TryCta from '../components/TryCta.astro';
 
 const tiers = [
 		{
-			name: 'Pioneers',
-			id: 'tier-pioneers',
-			priceMonthly: '$5',
+			name: 'Beta access',
+			id: 'tier-beta',
+			price: 'Free during beta',
 			description:
-				'Get early access and receive a custom-tailored onboarding and workflow consultation from our team.',
+				'Dailyboard is currently available to business teams free of charge during beta. Contact us to arrange access.',
 			features: [
 				'Custom onboarding experience',
 				'Unlimited boards',
 				'Full commitments history',
-				'Unconditional refund within the first 60 days',
 			],
 			featured: true,
 		},
@@ -55,15 +54,10 @@ const tiers = [
 		<div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
 			<h2 class="text-base font-semibold leading-7 text-text-primary-weak">Pricing</h2>
 			<p class="mt-2 text-2xl font-bold tracking-tight text-text sm:text-4xl">
-				Invest in your time
+				Plan your day together
 			</p>
 			<p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-text-weak">
-				Imagine you'd get
-				<strong class="decoration-text-primary-weak underline-offset-4 underline"
-					>an&nbsp;extra&nbsp;hour&nbsp;a&nbsp;week</strong
-				>
-				from each of your&nbsp;teammates.
-				With&nbsp;Dailyboard you buy this&nbsp;time for&nbsp;a&nbsp;fraction of&nbsp;its&nbsp;cost.
+				Explore Dailyboard with your team during our beta.
 			</p>
 		</div>
 		<div
@@ -90,8 +84,7 @@ const tiers = [
 					{tier.name}
 				</h3>
 				<p class="mt-4 flex items-baseline gap-x-2">
-					<span class="text-5xl font-bold tracking-tight text-text">{tier.priceMonthly}</span>
-					<span class="text-base text-gray-400">/ user / mo.</span>
+					<span class="text-3xl sm:text-4xl font-bold tracking-tight text-text">{tier.price}</span>
 				</p>
 				<p class="mt-6 text-base leading-7 text-text-weak">{tier.description}</p>
 				<ul
@@ -113,7 +106,7 @@ const tiers = [
 					<TryCta />
 				</div>
 				<div class="text-center text-sm text-text-weak mt-4">
-						30-day trial, no card required
+						contact@dailyboard.io
 					</div>
 			</div>
 			))}

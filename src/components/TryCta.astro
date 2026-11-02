@@ -1,15 +1,5 @@
 ---
 import Button from '../ui/Button.astro';
-
-const config = {
-	email: 'pioneers@dailyboard.io',
-	subject: `I want to join!`,
-	body: `Tell us a bit about your company and/or team!`,
-};
-
-const href = `mailto:${config.email}?subject=${encodeURIComponent(
-	config.subject
-)}&body=${encodeURIComponent(config.body)}`;
 ---
 
-<Button href="https://app.dailyboard.io/auth/signup">Try for free!</Button>
+<Button href="mailto:contact@dailyboard.io">Contact us</Button>
