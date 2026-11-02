@@ -1,0 +1,66 @@
+---
+pubDate: 2026-11-02
+title: "Dailyboard, Forward — November 2, 2026"
+description: "Plan several commitments at once, focus your private board, preview Jira issues, and keep your place while Dailyboard refreshes."
+category: "Product update"
+---
+
+This edition of **Dailyboard, Forward** covers the changes since October 19: fewer repeated actions when plans change, more control over your private board, and Jira context alongside your daily commitments.
+
+## In this update
+
+- [Update or move several commitments together in your desktop browser.](#plan-several-commitments-at-once)
+- [Switch your private board between all your work and personal commitments only.](#make-room-for-your-personal-plans)
+- [Read linked Jira issues without leaving Dailyboard.](#bring-jira-context-into-your-day)
+- [Keep your board visible while navigating dates, with clearer loading and recovery.](#keep-your-place)
+- [Catch up on Calendar fixes, reliability work, and the current iOS testing stage.](#also-improved)
+
+<h2 style="scroll-margin-top:6rem" id="plan-several-commitments-at-once">Plan several commitments at once</h2>
+
+When a day's plan changes, you can now update a group of commitments together. In your **desktop browser**, hold **Cmd** on a Mac or **Ctrl** on Windows and click the commitments you want to select, on the board or in Backlog.
+
+The toolbar at the bottom lets you change their status, choose a due date, or delete them after confirmation. You can also drag the selected group to another day or between the board and Backlog, keeping its order. Selection clears after an operation; if some updates fail, the result tells you what happened so you can check the affected commitments before trying again.
+
+<img src="/images/updates/2026-11-02/desktop-bulk@3x.png" alt="A Product team board with completed work on Monday, two selected commitments on Tuesday, and the Status, Due date and Delete toolbar." width="1200" height="760" loading="lazy" style="max-width:1200px;width:100%;height:auto" />
+
+This is a desktop feature for a mouse or trackpad. In your phone's browser and the native iOS test app, continue editing commitments individually. Deletion is permanent, so check the confirmation before removing a group.
+
+<h2 style="scroll-margin-top:6rem" id="make-room-for-your-personal-plans">Make room for your personal plans</h2>
+
+Your private board can bring together commitments assigned to you across organizations. Sometimes you want to see only your personal plans instead.
+
+Open **Board settings** from the gear on your private board, turn off **Show commitments from all organizations**, and choose **Save**. The board, Backlog and Overdue then show only commitments from your private workspace. Turn it back on to restore the combined view; this changes what you see, without moving or deleting anything.
+
+<img src="/images/updates/2026-11-02/private-filter@3x.png" alt="Private board settings with Show commitments from all organizations switched off, the P shortcut explained below it, and a Save button." width="760" height="540" loading="lazy" style="max-width:760px;width:100%;height:auto;margin:2rem auto" />
+
+The preference is saved with the board and is available in desktop and phone browsers. On desktop, **P** switches the same preference when you are not typing or working in a dialog.
+
+<h2 style="scroll-margin-top:6rem" id="bring-jira-context-into-your-day">Bring Jira context into your day</h2>
+
+You can now connect your Jira account from **Integrations** in the organization where you plan your work. A Jira key in a commitment's title, or a Jira issue URL in its link, can then show the issue's title alongside that commitment.
+
+Open the reference to read the issue's description, status and assignee inside Dailyboard, then return to your plan. You can also find references under **Linked items** in the commitment's details. The preview opens in a side panel on desktop and a bottom sheet in your phone's browser.
+
+Each person connects their own Jira account, separately for each organization. A preview uses that person's Jira access. Linking an issue does not change the commitment's text or status, and editing a commitment does not edit the Jira issue. This gives you task context while keeping the day's commitment focused on the outcome you intend to deliver.
+
+Set up connections in a browser. The native iOS test app does not offer the connection flow; its integration screen directs you to the web version.
+
+<h2 style="scroll-margin-top:6rem" id="keep-your-place">Keep your place</h2>
+
+Moving through dates now keeps the existing board visible while the next range loads. A small spinner in the date control shows that the request is still in progress, instead of replacing the whole board with a loading screen. Initial entry and other page loads also have clearer loading feedback.
+
+<img src="/images/updates/2026-11-02/mobile-board@3x.png" alt="Dailyboard in a phone browser, showing Emma's completed and upcoming commitments on a shared Product team board, with Alex and Sofia in the participant selector." width="390" height="760" loading="lazy" style="max-width:390px;width:100%;height:auto;margin:2rem auto;border-radius:12px" />
+
+We've also improved recovery of live updates after a connection drops. Brief reconnections no longer immediately produce warning and recovery messages. A sustained interruption still shows a warning, so you know when the board may need to catch up.
+
+Behind the scenes, Calendar synchronization now skips writes and live-update notifications when an event has not changed, and reduces contention between unrelated imports. We also fixed a server memory-retention problem. These changes reduce unnecessary work and address causes of interruptions. We continue investigating slower operations and connection problems through production error reviews and follow-up fixes.
+
+<h2 style="scroll-margin-top:6rem" id="also-improved">Also improved</h2>
+
+- **Google Calendar is available across organizations**, without the earlier preview-access restriction. In a browser, open your organization's **Integrations**, connect Google Calendar and choose the calendars to include.
+- Calendar notification subscriptions are checked more frequently and renewed separately for each selected calendar. Imports also filter out the exact `CANCELLED` placeholder returned for some rescheduled events; this does not retroactively clean up every historical import.
+- Board settings stay accessible above an open Inbox, and adding a commitment link puts focus straight into the URL field.
+- Account checks handle an unavailable API as a connection problem, rather than incorrectly asking you to verify your email again.
+- **iOS testing continues in TestFlight.** Recent test builds preserve the current screen and unsaved work when returning to the app, and improve invitation handling. This is a testing update, not a public App Store launch; availability depends on the test build you have installed.
+
+Tell us which part of your daily planning still takes too many steps. That helps us choose what to simplify next.
