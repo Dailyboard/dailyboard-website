@@ -1,7 +1,7 @@
 ---
 pubDate: 2026-11-02
 title: "Dailyboard, Forward — November 2, 2026"
-description: "Plan several commitments at once, focus your private board, preview Jira issues, and keep your place while Dailyboard refreshes."
+description: "Plan several commitments at once, focus your private board, and preview Jira issues alongside your daily commitments."
 category: "Product update"
 ---
 
@@ -12,7 +12,6 @@ This edition of **Dailyboard, Forward** covers the changes since October 19: few
 - [Update or move several commitments together in your desktop browser.](#plan-several-commitments-at-once)
 - [Switch your private board between all your work and personal commitments only.](#make-room-for-your-personal-plans)
 - [Read linked Jira issues without leaving Dailyboard.](#bring-jira-context-into-your-day)
-- [Keep your board visible while navigating dates, with clearer loading and recovery.](#keep-your-place)
 - [Catch up on Calendar fixes, reliability work, and the current iOS testing stage.](#also-improved)
 
 <h2 style="scroll-margin-top:6rem" id="plan-several-commitments-at-once">Plan several commitments at once</h2>
@@ -49,18 +48,11 @@ Each person connects their own Jira account, separately for each organization. A
 
 Set up connections in a browser. The native iOS test app does not offer the connection flow; its integration screen directs you to the web version.
 
-<h2 style="scroll-margin-top:6rem" id="keep-your-place">Keep your place</h2>
-
-Moving through dates now keeps the existing board visible while the next range loads. A small spinner in the date control shows that the request is still in progress, instead of replacing the whole board with a loading screen. Initial entry and other page loads also have clearer loading feedback.
-
-<img src="/images/updates/2026-11-02/mobile-board@3x.png" alt="Dailyboard in a phone browser, showing Emma's completed and upcoming commitments on a shared Product team board, with Alex and Sofia in the participant selector." width="390" height="760" loading="lazy" style="max-width:390px;width:100%;height:auto;margin:2rem auto;border-radius:12px" />
-
-We've also improved recovery of live updates after a connection drops. Brief reconnections no longer immediately produce warning and recovery messages. A sustained interruption still shows a warning, so you know when the board may need to catch up.
-
-Behind the scenes, Calendar synchronization now skips writes and live-update notifications when an event has not changed, and reduces contention between unrelated imports. We also fixed a server memory-retention problem. These changes reduce unnecessary work and address causes of interruptions. We continue investigating slower operations and connection problems through production error reviews and follow-up fixes.
-
 <h2 style="scroll-margin-top:6rem" id="also-improved">Also improved</h2>
 
+- Moving through dates keeps your board visible while the next range loads, with a small spinner in the date control. Initial entry and other page loads also have clearer loading feedback.
+- Live updates recover more reliably after a connection drops. Brief reconnections no longer immediately show warning and recovery messages; sustained interruptions still show a warning when the board may need to catch up.
+- Calendar sync skips unchanged-event writes and notifications and reduces contention between imports. We also fixed a server memory-retention problem. Production error reviews and follow-up fixes continue for slower operations and connection problems.
 - **Google Calendar is available across organizations**, without the earlier preview-access restriction. In a browser, open your organization's **Integrations**, connect Google Calendar and choose the calendars to include.
 - Calendar notification subscriptions are checked more frequently and renewed separately for each selected calendar. Imports also filter out the exact `CANCELLED` placeholder returned for some rescheduled events; this does not retroactively clean up every historical import.
 - Board settings stay accessible above an open Inbox, and adding a commitment link puts focus straight into the URL field.
