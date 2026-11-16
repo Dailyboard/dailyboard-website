@@ -1,0 +1,48 @@
+---
+pubDate: 2026-11-16
+title: "Dailyboard, Forward — November 16, 2026"
+description: "Bring overdue commitments into today's plan, save links with less editing, and manage the deletion of your account."
+category: "Product update"
+---
+
+This edition of **Dailyboard, Forward** covers the changes since November 2: a quicker way to replan overdue work, less manual editing when you paste a link, and a clear path for deleting your account.
+
+## In this update
+
+- [Bring your overdue commitments into today's plan with one bulk action.](#give-overdue-work-a-new-plan)
+- [Delete your account with email confirmation and clear choices for shared work.](#stay-in-control-of-your-account)
+- [Catch up on automatic links, mobile navigation, and reliability work.](#also-improved)
+
+<h2 style="scroll-margin-top:6rem" id="give-overdue-work-a-new-plan">Give overdue work a new plan</h2>
+
+An unfinished commitment does not always need a new status. Sometimes it simply needs a new date. Open your board's **Inbox**, switch to **Overdue**, and choose **Bulk actions → Plan all for today**. Review the confirmation before applying it to the overdue commitments in that view.
+
+This moves their due dates to the end of today in the board's timezone while keeping their statuses. Work you have already finished, undated commitments in Backlog, and future plans stay where they are. You can bring outstanding work back into today's plan without editing each commitment separately.
+
+<img src="/images/updates/2026-11-16/overdue-actions@3x.png" alt="A fictional Product studio board with completed commitments and the Overdue menu offering Plan all for today, Mark all as Done and Mark all as Not done." width="1440" height="900" loading="lazy" style="max-width:1200px;width:100%;height:auto" />
+
+The same three choices are available in your **phone's browser**, where the menu opens as a bottom sheet. Use **Mark all as Done** for finished work or **Mark all as Not done** when you have decided not to complete it. These status actions keep the original due dates and retain the existing 1,000-commitment limit; planning for today includes the full overdue scope.
+
+Large batches can take time. If an operation only partly succeeds, check the refreshed list before retrying: completed updates are not undone.
+
+<h2 style="scroll-margin-top:6rem" id="stay-in-control-of-your-account">Stay in control of your account</h2>
+
+You can now start account deletion yourself from **Your account → Delete account → Delete my account** in a desktop or phone browser. The screen explains the consequences before you request a confirmation code by email. Entering the code and confirming completes the deletion; simply opening this screen does not delete anything.
+
+<img src="/images/updates/2026-11-16/account-deletion@3x.png" alt="The Delete account section explains what is deleted or retained and offers Send confirmation code and Cancel." width="1000" height="380" loading="lazy" style="max-width:1000px;width:100%;height:auto;margin:2rem auto" />
+
+Your private workspace and its commitments are deleted. Shared commitments, history and assignments remain under **Deleted user**, while your name, email and avatar are removed. Your integrations disconnect and your existing sessions lose access. If you register again with the same email, you start with a new account rather than recovering the old workspace.
+
+If you are the last **Organization Manager** in an organization with other members, first choose an existing member and explicitly grant them management permissions. That grant takes effect immediately and remains in place even if you cancel account deletion. An organization where you are the only member is retained anonymously as **Organization deleted**.
+
+**Account deletion cannot be undone in the app.** Check your private work and the management of shared organizations before confirming.
+
+<h2 style="scroll-margin-top:6rem" id="also-improved">Also improved</h2>
+
+- **Paste a link while writing a commitment.** When you save a description such as `Review https://example.com/spec tomorrow`, Dailyboard puts the first web address in the commitment's link and keeps “Review tomorrow” as the description. Open it through the commitment's link control. The first address replaces an existing link; further addresses stay in the description. Editing without an address preserves the saved link, and a URL-only description stays readable instead of becoming empty. This works when creating or editing commitments in desktop and phone browsers.
+- **Start a new date range at the top on your phone.** Changing the board's date range now resets its vertical scroll, so the beginning of the new range is visible. Normal commitment refreshes do not reset your position, and the explicit scroll-to-today action still takes you to today.
+- **Clearer account screens.** Account actions have more space at the bottom of the page. On email verification, confirming the email is the primary action and requesting a new code is visually secondary.
+- **Performance and reliability remain ongoing work.** We continue reviewing production errors and investigating slow Overdue requests. These investigations are still open; a period without new reports does not by itself establish a fix.
+- **iOS testing continues.** TestFlight build 1.0 (13) includes account deletion and the recent board changes, and has been submitted for external beta review. This is not a public App Store release. The later account-spacing and email-button refinements require a newer native build. We are also investigating a commitment-creation error reported by the test build; its follow-up fix is still in review.
+
+Tell us where replanning still takes too many steps. Your feedback helps us choose the next improvement.
