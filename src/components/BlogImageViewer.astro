@@ -1,7 +1,7 @@
 <dialog
   data-blog-image-viewer
   aria-label="Enlarged image"
-  class="bg-background text-text"
+  class="text-text"
 >
   <div class="viewer-toolbar">
     <button type="button" data-zoom aria-pressed="false">Zoom in</button>
@@ -25,14 +25,18 @@
     height: calc(100dvh - 2rem);
     max-height: none;
     padding: 0;
-    border: 1px solid;
-    border-radius: 0.75rem;
+    border: 0;
+    background: transparent;
     overflow: hidden;
   }
   dialog::backdrop {
-    background: rgb(0 0 0 / 0.85);
+    background: rgb(0 0 0 / 0.94);
   }
   .viewer-toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
     display: flex;
     justify-content: flex-end;
     gap: 0.75rem;
@@ -41,8 +45,13 @@
   button {
     min-height: 44px;
     padding: 0.5rem 1rem;
-    border: 1px solid currentColor;
+    border: 0;
     border-radius: 0.5rem;
+  }
+  [data-close] {
+    min-width: 44px;
+    font-size: 1.75rem;
+    line-height: 1;
   }
   button:focus-visible,
   .viewer-scroll:focus-visible {
@@ -50,12 +59,14 @@
     outline-offset: -3px;
   }
   .viewer-scroll {
-    height: calc(100% - 4.5rem);
+    display: flex;
+    height: 100%;
     overflow: auto;
     overscroll-behavior: contain;
-    padding: 0.5rem;
+    padding: 4.5rem 0.5rem;
   }
   img {
+    flex: none;
     display: block;
     width: auto;
     height: auto;
