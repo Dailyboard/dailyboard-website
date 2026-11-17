@@ -30,17 +30,7 @@
       "Viewer uses original image",
     );
     assert(preview.alt === image.alt, "Viewer retains alt text");
-    const zoom = dialog.querySelector("[data-zoom]");
-    zoom.click();
-    assert(
-      zoom.getAttribute("aria-pressed") === "true",
-      "Zoom state is accessible",
-    );
-    assert(
-      preview.getBoundingClientRect().width === preview.naturalWidth,
-      "Zoom exposes full resolution",
-    );
-    zoom.click();
+    assert(dialog.querySelectorAll("button").length === 1, "Only the close control remains");
     assert(
       preview.getBoundingClientRect().width <= dialog.clientWidth,
       "Fit stays within dialog",

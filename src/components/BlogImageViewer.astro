@@ -4,7 +4,6 @@
   class="text-text"
 >
   <div class="viewer-toolbar">
-    <button type="button" data-zoom aria-pressed="false">Zoom in</button>
     <button type="button" data-close class="focus-visible:text-text-primary-weak" aria-label="Close image preview" autofocus>
       <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <path d="M6 6l12 12M6 18L18 6" />
@@ -13,8 +12,6 @@
   </div>
   <div
     class="viewer-scroll"
-    tabindex="0"
-    aria-label="Image — scroll to explore when zoomed"
   >
     <img data-viewer-image alt="" />
   </div>
@@ -58,11 +55,6 @@
     place-items: center;
     border-radius: 0;
   }
-  button:focus-visible,
-  .viewer-scroll:focus-visible {
-    outline: 2px solid;
-    outline-offset: -3px;
-  }
   [data-close]:focus {
     outline: none;
     box-shadow: none;
@@ -84,10 +76,6 @@
     margin: auto;
     object-fit: contain;
   }
-  img[data-zoomed] {
-    max-width: none;
-    max-height: none;
-  }
   :global([data-blog-article] img[data-enlarge]) {
     cursor: zoom-in;
   }
@@ -108,25 +96,14 @@
     const preview = dialog.querySelector<HTMLImageElement>(
       "[data-viewer-image]",
     )!;
-    const zoom = dialog.querySelector<HTMLButtonElement>("[data-zoom]")!;
     const close = dialog.querySelector<HTMLButtonElement>("[data-close]")!;
-    const scroll = dialog.querySelector<HTMLElement>(".viewer-scroll")!;
     let trigger: HTMLImageElement | null = null;
     let previousOverflow = "";
-
-    function resetZoom() {
-      preview.removeAttribute("data-zoomed");
-      preview.style.width = "";
-      zoom.textContent = "Zoom in";
-      zoom.setAttribute("aria-pressed", "false");
-      scroll.scrollTo(0, 0);
-    }
 
     function open(image: HTMLImageElement) {
       trigger = image;
       preview.src = image.currentSrc || image.src;
       preview.alt = image.alt;
-      resetZoom();
       previousOverflow = document.documentElement.style.overflow;
       document.documentElement.style.overflow = "hidden";
       dialog!.showModal();
@@ -156,13 +133,6 @@
         image.removeAttribute("data-enlarge");
       }
     });
-    zoom.addEventListener("click", () => {
-      if (preview.hasAttribute("data-zoomed")) return resetZoom();
-      preview.setAttribute("data-zoomed", "");
-      preview.style.width = `${preview.naturalWidth}px`;
-      zoom.textContent = "Fit image";
-      zoom.setAttribute("aria-pressed", "true");
-    });
     close.addEventListener("click", () => dialog.close());
     dialog.addEventListener("click", (event) => {
       if (event.target !== dialog) return;
@@ -177,7 +147,6 @@
     });
     dialog.addEventListener("close", () => {
       document.documentElement.style.overflow = previousOverflow;
-      resetZoom();
       trigger?.focus({ preventScroll: true });
     });
     document.addEventListener(
