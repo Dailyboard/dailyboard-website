@@ -1,0 +1,173 @@
+<dialog
+  data-blog-image-viewer
+  aria-label="Enlarged image"
+  class="bg-background text-text"
+>
+  <div class="viewer-toolbar">
+    <button type="button" data-zoom aria-pressed="false">Zoom in</button>
+    <button type="button" data-close autofocus
+      >Close <span aria-hidden="true">×</span></button
+    >
+  </div>
+  <div
+    class="viewer-scroll"
+    tabindex="0"
+    aria-label="Image — scroll to explore when zoomed"
+  >
+    <img data-viewer-image alt="" />
+  </div>
+</dialog>
+
+<style>
+  dialog {
+    width: calc(100% - 2rem);
+    max-width: 100rem;
+    height: calc(100dvh - 2rem);
+    max-height: none;
+    padding: 0;
+    border: 1px solid;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  dialog::backdrop {
+    background: rgb(0 0 0 / 0.85);
+  }
+  .viewer-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  button {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 0.5rem;
+  }
+  button:focus-visible,
+  .viewer-scroll:focus-visible {
+    outline: 2px solid;
+    outline-offset: -3px;
+  }
+  .viewer-scroll {
+    height: calc(100% - 4.5rem);
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 0.5rem;
+  }
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+  }
+  img[data-zoomed] {
+    max-width: none;
+    max-height: none;
+  }
+  :global([data-blog-article] img[data-enlarge]) {
+    cursor: zoom-in;
+  }
+  :global([data-blog-article] img[data-enlarge]:focus-visible) {
+    outline: 3px solid;
+    outline-offset: 4px;
+  }
+</style>
+
+<script>
+  function setupBlogImages() {
+    const dialog = document.querySelector<HTMLDialogElement>(
+      "[data-blog-image-viewer]",
+    );
+    const article = document.querySelector<HTMLElement>("[data-blog-article]");
+    if (!dialog || !article || dialog.dataset.ready) return;
+    dialog.dataset.ready = "true";
+    const preview = dialog.querySelector<HTMLImageElement>(
+      "[data-viewer-image]",
+    )!;
+    const zoom = dialog.querySelector<HTMLButtonElement>("[data-zoom]")!;
+    const close = dialog.querySelector<HTMLButtonElement>("[data-close]")!;
+    const scroll = dialog.querySelector<HTMLElement>(".viewer-scroll")!;
+    let trigger: HTMLImageElement | null = null;
+    let previousOverflow = "";
+
+    function resetZoom() {
+      preview.removeAttribute("data-zoomed");
+      preview.style.width = "";
+      zoom.textContent = "Zoom in";
+      zoom.setAttribute("aria-pressed", "false");
+      scroll.scrollTo(0, 0);
+    }
+
+    function open(image: HTMLImageElement) {
+      trigger = image;
+      preview.src = image.currentSrc || image.src;
+      preview.alt = image.alt;
+      resetZoom();
+      previousOverflow = document.documentElement.style.overflow;
+      document.documentElement.style.overflow = "hidden";
+      dialog!.showModal();
+    }
+
+    article.querySelectorAll<HTMLImageElement>("img").forEach((image) => {
+      // Preserve author-provided navigation for images that already link somewhere.
+      const link = image.closest("a");
+      image.dataset.enlarge = "";
+      if (!link) {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          `Enlarge image: ${image.alt || "Article image"}`,
+        );
+        image.title = "Click to enlarge";
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            open(image);
+          }
+        });
+        image.addEventListener("click", () => open(image));
+      } else {
+        image.removeAttribute("data-enlarge");
+      }
+    });
+    zoom.addEventListener("click", () => {
+      if (preview.hasAttribute("data-zoomed")) return resetZoom();
+      preview.setAttribute("data-zoomed", "");
+      preview.style.width = `${preview.naturalWidth}px`;
+      zoom.textContent = "Fit image";
+      zoom.setAttribute("aria-pressed", "true");
+    });
+    close.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target !== dialog) return;
+      const bounds = dialog.getBoundingClientRect();
+      if (
+        event.clientX < bounds.left ||
+        event.clientX > bounds.right ||
+        event.clientY < bounds.top ||
+        event.clientY > bounds.bottom
+      )
+        dialog.close();
+    });
+    dialog.addEventListener("close", () => {
+      document.documentElement.style.overflow = previousOverflow;
+      resetZoom();
+      trigger?.focus({ preventScroll: true });
+    });
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        if (dialog.open) dialog.close();
+      },
+      { once: true },
+    );
+  }
+  setupBlogImages();
+  document.addEventListener("astro:page-load", setupBlogImages);
+</script>
